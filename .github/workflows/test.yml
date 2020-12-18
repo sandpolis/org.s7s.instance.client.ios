@@ -1,0 +1,22 @@
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    name: "Test on macos-latest"
+    runs-on: macos-latest
+    steps:
+    - name: Initialize Java
+      uses: actions/setup-java@v1
+      with:
+        java-version: 15
+    - name: Checkout root repository
+      uses: actions/checkout@v2
+      with:
+        repository: sandpolis/sandpolis
+    - name: Checkout submodules
+      run: |
+        git submodule update --init --remote --merge com.sandpolis.client.lockstone
