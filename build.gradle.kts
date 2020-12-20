@@ -32,5 +32,5 @@ tasks.xcodebuild {
 	dependsOn(":module:com.sandpolis.core.instance:generateProto")
 	dependsOn(":module:com.sandpolis.core.net:generateProto")
 	dependsOn(":module:com.sandpolis.core.clientserver:generateProto")
-	dependsOn(":module:com.sandpolis.plugin.desktop:generateProto")
+	dependsOn(":plugin:com.sandpolis.plugin.desktop:generateProto")
 }
