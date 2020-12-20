@@ -5,8 +5,8 @@ on:
     branches: [ master ]
 
 jobs:
-  test:
-    name: "Test on macos-latest"
+  build:
+    name: "Build on macos-latest"
     runs-on: macos-latest
     steps:
     - name: Initialize Java
@@ -26,6 +26,7 @@ jobs:
     - name: Checkout submodules
       run: |
         git submodule update --init --remote --merge com.sandpolis.client.lockstone
-    - name: Execute tests
+        git submodule update --init --remote --merge plugin/com.sandpolis.plugin.desktop
+    - name: Execute build
       run: |
-        ./gradlew :com.sandpolis.client.lockstone:build
+        gradle --no-daemon :com.sandpolis.client.lockstone:build
