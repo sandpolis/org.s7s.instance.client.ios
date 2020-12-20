@@ -13,6 +13,12 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 15
+    - name: Initialize homebrew
+      uses: Homebrew/actions/setup-homebrew@master
+    - name: Install dependencies
+      run: |
+        brew install protobuf
+        brew install swift-protobuf
     - name: Checkout root repository
       uses: actions/checkout@v2
       with:
@@ -20,3 +26,6 @@ jobs:
     - name: Checkout submodules
       run: |
         git submodule update --init --remote --merge com.sandpolis.client.lockstone
+    - name: Execute tests
+      run: |
+        ./gradlew :com.sandpolis.client.lockstone:build
