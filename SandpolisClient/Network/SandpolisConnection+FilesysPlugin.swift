@@ -1,14 +1,12 @@
 //============================================================================//
 //                                                                            //
-//                Copyright © 2015 - 2020 Subterranean Security               //
+//                         Copyright © 2015 Sandpolis                         //
 //                                                                            //
 //  This source file is subject to the terms of the Mozilla Public License    //
 //  version 2. You may not use this file except in compliance with the MPL    //
-//  as published by the Mozilla Foundation at:                                //
+//  as published by the Mozilla Foundation.                                   //
 //                                                                            //
-//    https://mozilla.org/MPL/2.0                                             //
-//                                                                            //
-//=========================================================S A N D P O L I S==//
+//============================================================================//
 import Foundation
 import NIO
 import SwiftProtobuf
@@ -33,7 +31,7 @@ extension SandpolisConnection {
 					$0.mtime = mtimes
 					$0.size = sizes
 				}
-            }.serializedData()
+			}.serializedData()
 		}
 
 		os_log("Requesting file listing for client: %d, path: %s", target, path)
@@ -56,7 +54,7 @@ extension SandpolisConnection {
 			$0.to = target
 			$0.payload = try! Plugin_Filesys_Msg_RQ_FileDelete.with {
 				$0.target = [path]
-            }.serializedData()
+			}.serializedData()
 		}
 
 		os_log("Requesting file deletion for client: %d, path: %s", target, path)

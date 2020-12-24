@@ -1,14 +1,12 @@
 //============================================================================//
 //                                                                            //
-//                Copyright © 2015 - 2020 Subterranean Security               //
+//                         Copyright © 2015 Sandpolis                         //
 //                                                                            //
 //  This source file is subject to the terms of the Mozilla Public License    //
 //  version 2. You may not use this file except in compliance with the MPL    //
-//  as published by the Mozilla Foundation at:                                //
+//  as published by the Mozilla Foundation.                                   //
 //                                                                            //
-//    https://mozilla.org/MPL/2.0                                             //
-//                                                                            //
-//=========================================================S A N D P O L I S==//
+//============================================================================//
 import Foundation
 import NIO
 import SwiftProtobuf
@@ -40,7 +38,7 @@ extension SandpolisConnection {
 				$0.type = shell
 				$0.cols = cols
 				$0.rows = rows
-            }.serializedData()
+			}.serializedData()
 		}
 
 		os_log("Requesting remote shell session for client: %d", target)
@@ -55,7 +53,7 @@ extension SandpolisConnection {
 	func shell_list(_ target: Int32) -> EventLoopFuture<Any> {
 		var rq = Core_Net_MSG.with {
 			$0.to = target
-            $0.payload = try! Plugin_Shell_Msg_RQ_ListShells().serializedData()
+			$0.payload = try! Plugin_Shell_Msg_RQ_ListShells().serializedData()
 		}
 
 		os_log("Requesting shell list for client: %d", target)
@@ -83,7 +81,7 @@ extension SandpolisConnection {
 			$0.to = target
 			$0.payload = try! Plugin_Shell_Msg_RQ_PowerChange.with {
 				$0.change = .poweroff
-            }.serializedData()
+			}.serializedData()
 		}
 
 		os_log("Requesting poweroff for client: %d", target)
@@ -107,7 +105,7 @@ extension SandpolisConnection {
 			$0.to = target
 			$0.payload = try! Plugin_Shell_Msg_RQ_PowerChange.with {
 				$0.change = .restart
-            }.serializedData()
+			}.serializedData()
 		}
 
 		os_log("Requesting restart for client: %d", target)
@@ -135,7 +133,7 @@ extension SandpolisConnection {
 			$0.payload = try! Plugin_Shell_Msg_RQ_Execute.with {
 				$0.type = shell
 				$0.command = script
-            }.serializedData()
+			}.serializedData()
 		}
 
 		os_log("Requesting macro execution for client: %d", target)

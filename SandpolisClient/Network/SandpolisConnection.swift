@@ -1,14 +1,12 @@
 //============================================================================//
 //                                                                            //
-//                Copyright © 2015 - 2020 Subterranean Security               //
+//                         Copyright © 2015 Sandpolis                         //
 //                                                                            //
 //  This source file is subject to the terms of the Mozilla Public License    //
 //  version 2. You may not use this file except in compliance with the MPL    //
-//  as published by the Mozilla Foundation at:                                //
+//  as published by the Mozilla Foundation.                                   //
 //                                                                            //
-//    https://mozilla.org/MPL/2.0                                             //
-//                                                                            //
-//=========================================================S A N D P O L I S==//
+//============================================================================//
 import CryptoKit
 import NIO
 import NIOProtobuf
@@ -166,7 +164,7 @@ public class SandpolisConnection {
 			$0.payload = try! Core_Clientserver_Msg_RQ_Login.with {
 				$0.username = username
 				$0.password = SHA256.hash(data: password.data(using: .utf8)!).map { String(format: "%02hhx", $0) }.joined()
-            }.serializedData()
+			}.serializedData()
 		}
 
 		os_log("Requesting login for username: %s", username)
@@ -184,7 +182,7 @@ public class SandpolisConnection {
 			$0.to = target.cvid
 			$0.payload = try! Core_Net_Msg_RQ_STSnapshot.with {
 				$0.oid = oid
-            }.serializedData()
+			}.serializedData()
 		}
 
 		os_log("Requesting snapshot: %s", oid)

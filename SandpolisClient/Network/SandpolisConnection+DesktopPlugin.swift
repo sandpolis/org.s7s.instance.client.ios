@@ -1,14 +1,12 @@
 //============================================================================//
 //                                                                            //
-//                Copyright © 2015 - 2020 Subterranean Security               //
+//                         Copyright © 2015 Sandpolis                         //
 //                                                                            //
 //  This source file is subject to the terms of the Mozilla Public License    //
 //  version 2. You may not use this file except in compliance with the MPL    //
-//  as published by the Mozilla Foundation at:                                //
+//  as published by the Mozilla Foundation.                                   //
 //                                                                            //
-//    https://mozilla.org/MPL/2.0                                             //
-//                                                                            //
-//=========================================================S A N D P O L I S==//
+//============================================================================//
 import Foundation
 import NIO
 import SwiftProtobuf
@@ -23,13 +21,13 @@ extension SandpolisConnection {
 	func screenshot(_ target: Int32) -> EventLoopFuture<Any> {
 		var rq = Core_Net_MSG.with {
 			$0.to = target
-            $0.payload = try! Plugin_Desktop_Msg_RQ_Screenshot().serializedData()
+			$0.payload = try! Plugin_Desktop_Msg_RQ_Screenshot().serializedData()
 		}
 
 		os_log("Requesting screenshot for client: %d", target)
 		return request(&rq).map { rs in
 			do {
-                return try Plugin_Desktop_Msg_RS_Screenshot.init(serializedData: rs.payload)
+				return try Plugin_Desktop_Msg_RS_Screenshot.init(serializedData: rs.payload)
 			} catch {
 				return Core_Foundation_Outcome.with {
 					$0.result = false
@@ -58,7 +56,7 @@ extension SandpolisConnection {
 			$0.to = target
 			$0.payload = try! Plugin_Desktop_Msg_RQ_DesktopStream.with {
 				$0.id = stream.id
-            }.serializedData()
+			}.serializedData()
 		}
 
 		os_log("Requesting remote desktop session for client: %d", target)

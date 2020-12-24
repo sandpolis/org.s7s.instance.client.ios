@@ -1,14 +1,12 @@
 //============================================================================//
 //                                                                            //
-//                Copyright © 2015 - 2020 Subterranean Security               //
+//                         Copyright © 2015 Sandpolis                         //
 //                                                                            //
 //  This source file is subject to the terms of the Mozilla Public License    //
 //  version 2. You may not use this file except in compliance with the MPL    //
-//  as published by the Mozilla Foundation at:                                //
+//  as published by the Mozilla Foundation.                                   //
 //                                                                            //
-//    https://mozilla.org/MPL/2.0                                             //
-//                                                                            //
-//=========================================================S A N D P O L I S==//
+//============================================================================//
 import UIKit
 
 class InfoCell: UITableViewCell {
@@ -18,9 +16,9 @@ class InfoCell: UITableViewCell {
 	@IBOutlet weak var progress: UIActivityIndicatorView!
 
 	public func setAttribute(_ attribute: STAttribute<Any>) {
-        title.text = attribute.oid.path
+		title.text = attribute.oid.path
 		if let value = attribute.value {
-            self.value.text = value as? String
+			self.value.text = value as? String
 			self.value.isHidden = false
 			self.progress.stopAnimating()
 		} else {
