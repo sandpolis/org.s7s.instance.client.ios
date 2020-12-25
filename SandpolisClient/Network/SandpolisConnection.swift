@@ -177,7 +177,7 @@ public class SandpolisConnection {
 	///   - target: The target profile
 	///   - attribute: The target OID
 	/// - Returns: A response future
-	func snapshot_collection(_ target: SandpolisProfile, _ oid: String) -> EventLoopFuture<Core_Instance_ProtoCollection> {
+	func snapshot_collection(_ target: SandpolisProfile, _ oid: String) -> EventLoopFuture<Core_Instance_ProtoDocument> {
 		var rq = Core_Net_MSG.with {
 			$0.to = target.cvid
 			$0.payload = try! Core_Net_Msg_RQ_STSnapshot.with {
@@ -188,9 +188,9 @@ public class SandpolisConnection {
 		os_log("Requesting snapshot: %s", oid)
 		return request(&rq).map { rs in
 			do {
-				return try Core_Instance_ProtoCollection.init(serializedData: rs.payload)
+				return try Core_Instance_ProtoDocument.init(serializedData: rs.payload)
 			} catch {
-				return Core_Instance_ProtoCollection.init()
+				return Core_Instance_ProtoDocument.init()
 			}
 		}
 	}

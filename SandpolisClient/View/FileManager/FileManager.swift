@@ -30,7 +30,7 @@ class FileManager: UITableViewController {
 	private var sort: SortType = .name_asc
 
 	/// The current file listing
-	private var files = [Plugin_Filesys_Msg_FileListlet]()
+	private var files = [Plugin_Filesystem_Msg_FileListlet]()
 
 	/// Whether the browser is currently at the root directory
 	private var root: Bool = false
@@ -139,7 +139,7 @@ class FileManager: UITableViewController {
 	private func requestListing() {
 		SandpolisUtil.connection.fm_list(profile.cvid, path.path, mtimes: true, sizes: true).whenComplete { result in
 			switch result {
-			case .success(let rs as Plugin_Filesys_Msg_RS_FileListing):
+			case .success(let rs as Plugin_Filesystem_Msg_RS_FileListing):
 				self.loadListing(rs)
 
 				DispatchQueue.main.async {
@@ -152,7 +152,7 @@ class FileManager: UITableViewController {
 	}
 
 	/// Load the file listing from the given message
-	private func loadListing(_ rs: Plugin_Filesys_Msg_RS_FileListing) {
+	private func loadListing(_ rs: Plugin_Filesystem_Msg_RS_FileListing) {
 		files = rs.listing
 
 		sortFiles()
@@ -179,7 +179,7 @@ class FileManager: UITableViewController {
 	///   - list: The file list
 	///   - type: The sort type
 	/// - Returns: A newly sorted list
-	private func sortFiles(_ list: [Plugin_Filesys_Msg_FileListlet], _ type: SortType) -> [Plugin_Filesys_Msg_FileListlet] {
+	private func sortFiles(_ list: [Plugin_Filesystem_Msg_FileListlet], _ type: SortType) -> [Plugin_Filesystem_Msg_FileListlet] {
 		switch type {
 		case .size_asc:
 			return list.sorted {

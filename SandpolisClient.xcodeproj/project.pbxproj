@@ -12,7 +12,6 @@
 		AA0BA54F2554DFDA0042A3A3 /* build.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA54B2554DFDA0042A3A3 /* build.pb.swift */; };
 		AA0BA5502554DFDA0042A3A3 /* dependency.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA54C2554DFDA0042A3A3 /* dependency.pb.swift */; };
 		AA0BA5632554E04A0042A3A3 /* listener.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA5582554E04A0042A3A3 /* listener.pb.swift */; };
-		AA0BA5642554E04A0042A3A3 /* generator.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA5592554E04A0042A3A3 /* generator.pb.swift */; };
 		AA0BA5652554E04A0042A3A3 /* msg_plugin.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA55B2554E04A0042A3A3 /* msg_plugin.pb.swift */; };
 		AA0BA5662554E04A0042A3A3 /* msg_ping.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA55C2554E04A0042A3A3 /* msg_ping.pb.swift */; };
 		AA0BA5672554E04A0042A3A3 /* state.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA55D2554E04A0042A3A3 /* state.pb.swift */; };
@@ -32,11 +31,10 @@
 		AA0BA58B2554E1300042A3A3 /* msg_rd.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA5882554E1300042A3A3 /* msg_rd.pb.swift */; };
 		AA79B3AF2554E68C007E8A6B /* msg_listener.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B3A92554E68C007E8A6B /* msg_listener.pb.swift */; };
 		AA79B3B02554E68C007E8A6B /* msg_user.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B3AA2554E68C007E8A6B /* msg_user.pb.swift */; };
-		AA79B3B12554E68C007E8A6B /* msg_generator.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B3AB2554E68C007E8A6B /* msg_generator.pb.swift */; };
 		AA79B3B22554E68C007E8A6B /* msg_server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B3AC2554E68C007E8A6B /* msg_server.pb.swift */; };
 		AA79B3B32554E68C007E8A6B /* msg_group.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B3AD2554E68C007E8A6B /* msg_group.pb.swift */; };
 		AA79B3B42554E68C007E8A6B /* msg_login.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B3AE2554E68C007E8A6B /* msg_login.pb.swift */; };
-		AA79B3BB2554E6AA007E8A6B /* msg_filesys.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B3BA2554E6AA007E8A6B /* msg_filesys.pb.swift */; };
+		AA79B3BB2554E6AA007E8A6B /* msg_filesystem.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B3BA2554E6AA007E8A6B /* msg_filesystem.pb.swift */; };
 		AA79B3C32554E6C3007E8A6B /* msg_power.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B3C12554E6C3007E8A6B /* msg_power.pb.swift */; };
 		AA79B3C42554E6C3007E8A6B /* msg_shell.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B3C22554E6C3007E8A6B /* msg_shell.pb.swift */; };
 		AA79B3CB2554E6ED007E8A6B /* msg_device.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA79B3CA2554E6EC007E8A6B /* msg_device.pb.swift */; };
@@ -63,7 +61,7 @@
 		AAD2B7362553A5CF0071D814 /* ClientHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6D52553A5CE0071D814 /* ClientHandler.swift */; };
 		AAD2B7372553A5CF0071D814 /* SandpolisStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6D62553A5CE0071D814 /* SandpolisStream.swift */; };
 		AAD2B7382553A5CF0071D814 /* CvidRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6D72553A5CE0071D814 /* CvidRequestHandler.swift */; };
-		AAD2B7392553A5CF0071D814 /* SandpolisConnection+FilesysPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6D82553A5CE0071D814 /* SandpolisConnection+FilesysPlugin.swift */; };
+		AAD2B7392553A5CF0071D814 /* SandpolisConnection+FilesystemPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6D82553A5CE0071D814 /* SandpolisConnection+FilesystemPlugin.swift */; };
 		AAD2B73A2553A5CF0071D814 /* SandpolisConnection+ShellPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6D92553A5CE0071D814 /* SandpolisConnection+ShellPlugin.swift */; };
 		AAD2B73B2553A5CF0071D814 /* OverviewTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6DC2553A5CE0071D814 /* OverviewTable.swift */; };
 		AAD2B73C2553A5CF0071D814 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6DD2553A5CE0071D814 /* InfoCell.swift */; };
@@ -159,7 +157,6 @@
 		AA0BA54B2554DFDA0042A3A3 /* build.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = build.pb.swift; sourceTree = "<group>"; };
 		AA0BA54C2554DFDA0042A3A3 /* dependency.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dependency.pb.swift; sourceTree = "<group>"; };
 		AA0BA5582554E04A0042A3A3 /* listener.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listener.pb.swift; sourceTree = "<group>"; };
-		AA0BA5592554E04A0042A3A3 /* generator.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = generator.pb.swift; sourceTree = "<group>"; };
 		AA0BA55B2554E04A0042A3A3 /* msg_plugin.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_plugin.pb.swift; sourceTree = "<group>"; };
 		AA0BA55C2554E04A0042A3A3 /* msg_ping.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_ping.pb.swift; sourceTree = "<group>"; };
 		AA0BA55D2554E04A0042A3A3 /* state.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = state.pb.swift; sourceTree = "<group>"; };
@@ -179,11 +176,10 @@
 		AA0BA5882554E1300042A3A3 /* msg_rd.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_rd.pb.swift; sourceTree = "<group>"; };
 		AA79B3A92554E68C007E8A6B /* msg_listener.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_listener.pb.swift; sourceTree = "<group>"; };
 		AA79B3AA2554E68C007E8A6B /* msg_user.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_user.pb.swift; sourceTree = "<group>"; };
-		AA79B3AB2554E68C007E8A6B /* msg_generator.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_generator.pb.swift; sourceTree = "<group>"; };
 		AA79B3AC2554E68C007E8A6B /* msg_server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_server.pb.swift; sourceTree = "<group>"; };
 		AA79B3AD2554E68C007E8A6B /* msg_group.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_group.pb.swift; sourceTree = "<group>"; };
 		AA79B3AE2554E68C007E8A6B /* msg_login.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_login.pb.swift; sourceTree = "<group>"; };
-		AA79B3BA2554E6AA007E8A6B /* msg_filesys.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_filesys.pb.swift; sourceTree = "<group>"; };
+		AA79B3BA2554E6AA007E8A6B /* msg_filesystem.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_filesystem.pb.swift; sourceTree = "<group>"; };
 		AA79B3C12554E6C3007E8A6B /* msg_power.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_power.pb.swift; sourceTree = "<group>"; };
 		AA79B3C22554E6C3007E8A6B /* msg_shell.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_shell.pb.swift; sourceTree = "<group>"; };
 		AA79B3CA2554E6EC007E8A6B /* msg_device.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_device.pb.swift; sourceTree = "<group>"; };
@@ -208,7 +204,7 @@
 		AAD2B6D52553A5CE0071D814 /* ClientHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientHandler.swift; sourceTree = "<group>"; };
 		AAD2B6D62553A5CE0071D814 /* SandpolisStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandpolisStream.swift; sourceTree = "<group>"; };
 		AAD2B6D72553A5CE0071D814 /* CvidRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CvidRequestHandler.swift; sourceTree = "<group>"; };
-		AAD2B6D82553A5CE0071D814 /* SandpolisConnection+FilesysPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SandpolisConnection+FilesysPlugin.swift"; sourceTree = "<group>"; };
+		AAD2B6D82553A5CE0071D814 /* SandpolisConnection+FilesystemPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SandpolisConnection+FilesystemPlugin.swift"; sourceTree = "<group>"; };
 		AAD2B6D92553A5CE0071D814 /* SandpolisConnection+ShellPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SandpolisConnection+ShellPlugin.swift"; sourceTree = "<group>"; };
 		AAD2B6DC2553A5CE0071D814 /* OverviewTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewTable.swift; sourceTree = "<group>"; };
 		AAD2B6DD2553A5CE0071D814 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
@@ -338,7 +334,6 @@
 			isa = PBXGroup;
 			children = (
 				AA0BA5582554E04A0042A3A3 /* listener.pb.swift */,
-				AA0BA5592554E04A0042A3A3 /* generator.pb.swift */,
 				AA0BA55A2554E04A0042A3A3 /* msg */,
 				AA0BA55D2554E04A0042A3A3 /* state.pb.swift */,
 				AA0BA55E2554E04A0042A3A3 /* metatypes.pb.swift */,
@@ -407,7 +402,7 @@
 				AA79B3A82554E68C007E8A6B /* msg */,
 			);
 			name = com.sandpolis.core.clientserver;
-			path = ../../module/com.sandpolis.core.clientserver/gen/main/swift/com/sandpolis/core/com.sandpolis.core.clientserver;
+			path = ../../module/com.sandpolis.core.clientserver/gen/main/swift/com/sandpolis/core/clientserver;
 			sourceTree = "<group>";
 		};
 		AA79B3A82554E68C007E8A6B /* msg */ = {
@@ -415,7 +410,6 @@
 			children = (
 				AA79B3A92554E68C007E8A6B /* msg_listener.pb.swift */,
 				AA79B3AA2554E68C007E8A6B /* msg_user.pb.swift */,
-				AA79B3AB2554E68C007E8A6B /* msg_generator.pb.swift */,
 				AA79B3AC2554E68C007E8A6B /* msg_server.pb.swift */,
 				AA79B3AD2554E68C007E8A6B /* msg_group.pb.swift */,
 				AA79B3AE2554E68C007E8A6B /* msg_login.pb.swift */,
@@ -423,19 +417,19 @@
 			path = msg;
 			sourceTree = "<group>";
 		};
-		AA79B3B82554E6AA007E8A6B /* com.sandpolis.plugin.filesys */ = {
+		AA79B3B82554E6AA007E8A6B /* com.sandpolis.plugin.filesystem */ = {
 			isa = PBXGroup;
 			children = (
 				AA79B3B92554E6AA007E8A6B /* msg */,
 			);
-			name = com.sandpolis.plugin.filesys;
-			path = ../../plugin/com.sandpolis.plugin.filesys/gen/main/swift/com/sandpolis/plugin/com.sandpolis.plugin.filesys;
+			name = com.sandpolis.plugin.filesystem;
+			path = ../../plugin/com.sandpolis.plugin.filesystem/gen/main/swift/com/sandpolis/plugin/filesystem;
 			sourceTree = "<group>";
 		};
 		AA79B3B92554E6AA007E8A6B /* msg */ = {
 			isa = PBXGroup;
 			children = (
-				AA79B3BA2554E6AA007E8A6B /* msg_filesys.pb.swift */,
+				AA79B3BA2554E6AA007E8A6B /* msg_filesystem.pb.swift */,
 			);
 			path = msg;
 			sourceTree = "<group>";
@@ -446,7 +440,7 @@
 				AA79B3C02554E6C3007E8A6B /* msg */,
 			);
 			name = com.sandpolis.plugin.shell;
-			path = ../../plugin/com.sandpolis.plugin.shell/gen/main/swift/com/sandpolis/plugin/com.sandpolis.plugin.shell;
+			path = ../../plugin/com.sandpolis.plugin.shell/gen/main/swift/com/sandpolis/plugin/shell;
 			sourceTree = "<group>";
 		};
 		AA79B3C02554E6C3007E8A6B /* msg */ = {
@@ -464,7 +458,7 @@
 				AA79B3C92554E6EC007E8A6B /* msg */,
 			);
 			name = com.sandpolis.plugin.device;
-			path = ../../plugin/com.sandpolis.plugin.device/gen/main/swift/com/sandpolis/plugin/com.sandpolis.plugin.device;
+			path = ../../plugin/com.sandpolis.plugin.device/gen/main/swift/com/sandpolis/plugin/device;
 			sourceTree = "<group>";
 		};
 		AA79B3C92554E6EC007E8A6B /* msg */ = {
@@ -542,7 +536,7 @@
 				AAD2B6D52553A5CE0071D814 /* ClientHandler.swift */,
 				AAD2B6D62553A5CE0071D814 /* SandpolisStream.swift */,
 				AAD2B6D72553A5CE0071D814 /* CvidRequestHandler.swift */,
-				AAD2B6D82553A5CE0071D814 /* SandpolisConnection+FilesysPlugin.swift */,
+				AAD2B6D82553A5CE0071D814 /* SandpolisConnection+FilesystemPlugin.swift */,
 				AAD2B6D92553A5CE0071D814 /* SandpolisConnection+ShellPlugin.swift */,
 			);
 			path = Network;
@@ -785,7 +779,7 @@
 			children = (
 				AA79B3C82554E6EC007E8A6B /* com.sandpolis.plugin.device */,
 				AA79B3BF2554E6C3007E8A6B /* com.sandpolis.plugin.shell */,
-				AA79B3B82554E6AA007E8A6B /* com.sandpolis.plugin.filesys */,
+				AA79B3B82554E6AA007E8A6B /* com.sandpolis.plugin.filesystem */,
 				AA79B3A72554E68C007E8A6B /* com.sandpolis.core.clientserver */,
 				AA0BA5842554E1300042A3A3 /* com.sandpolis.plugin.desktop */,
 				AA0BA5702554E0AF0042A3A3 /* com.sandpolis.core.net */,
@@ -987,7 +981,6 @@
 				AAD2B7582553A5CF0071D814 /* MacroSelect.swift in Sources */,
 				AAD2B7722553A5CF0071D814 /* LoginAccount.swift in Sources */,
 				AAD2B7732553A5CF0071D814 /* BackgroundView.swift in Sources */,
-				AA0BA5642554E04A0042A3A3 /* generator.pb.swift in Sources */,
 				AA79B3B42554E68C007E8A6B /* msg_login.pb.swift in Sources */,
 				AAD2B7682553A5CF0071D814 /* FolderUpCell.swift in Sources */,
 				AAD2B74A2553A5CF0071D814 /* ClientScanner.swift in Sources */,
@@ -1007,7 +1000,7 @@
 				AAD2B73B2553A5CF0071D814 /* OverviewTable.swift in Sources */,
 				AA0BA5782554E0AF0042A3A3 /* msg_state.pb.swift in Sources */,
 				AAD2B7632553A5CF0071D814 /* About.swift in Sources */,
-				AAD2B7392553A5CF0071D814 /* SandpolisConnection+FilesysPlugin.swift in Sources */,
+				AAD2B7392553A5CF0071D814 /* SandpolisConnection+FilesystemPlugin.swift in Sources */,
 				AAD2B74D2553A5CF0071D814 /* ClientAnnotation.swift in Sources */,
 				AAD2B76A2553A5CF0071D814 /* Step2.swift in Sources */,
 				AAD2B7652553A5CF0071D814 /* CloudPricing.swift in Sources */,
@@ -1041,7 +1034,6 @@
 				AA79B3B02554E68C007E8A6B /* msg_user.pb.swift in Sources */,
 				AA0BA5892554E1300042A3A3 /* msg_desktop.pb.swift in Sources */,
 				AAD2B7322553A5CF0071D814 /* ResponseHandler.swift in Sources */,
-				AA79B3B12554E68C007E8A6B /* msg_generator.pb.swift in Sources */,
 				AA0BA54D2554DFDA0042A3A3 /* result.pb.swift in Sources */,
 				AA0BA5502554DFDA0042A3A3 /* dependency.pb.swift in Sources */,
 				AA79B3EB255619FA007E8A6B /* Oid.swift in Sources */,
@@ -1055,7 +1047,7 @@
 				AA0BA58A2554E1300042A3A3 /* msg_clipboard.pb.swift in Sources */,
 				AAD2B7772553A5CF0071D814 /* STAttribute.swift in Sources */,
 				AAD2B7432553A5CF0071D814 /* GroupActions.swift in Sources */,
-				AA79B3BB2554E6AA007E8A6B /* msg_filesys.pb.swift in Sources */,
+				AA79B3BB2554E6AA007E8A6B /* msg_filesystem.pb.swift in Sources */,
 				AAD2B77C2553A5CF0071D814 /* FormatUtil.swift in Sources */,
 				AAD2B7602553A5CF0071D814 /* TerminalTheme.swift in Sources */,
 				AA0BA57D2554E0AF0042A3A3 /* message.pb.swift in Sources */,

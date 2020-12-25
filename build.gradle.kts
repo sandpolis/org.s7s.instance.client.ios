@@ -8,6 +8,8 @@
 //                                                                            //
 //============================================================================//
 
+import org.openbakery.xcode.Destination
+
 plugins {
 	id("org.openbakery.xcode-plugin") version "0.20.1"
 }
@@ -16,11 +18,7 @@ xcodebuild {
 	scheme = "SandpolisClient"
 	target = "SandpolisClient"
 
-	//destination {
-	//	platform = "iOS Simulator"
-	//	name = "iPhone XR"
-	//	os = "14.0"
-	//}
+	setDestination(Destination("iOS Simulator", "iPhone 11", "14.0"))
 }
 
 tasks.xcodebuild {
