@@ -18,7 +18,7 @@ xcodebuild {
 	scheme = "SandpolisClient"
 	target = "SandpolisClient"
 
-	setDestination(Destination("iOS Simulator", "iPhone 11", "14.0"))
+	setDestination(Destination("iOS Simulator", "iPhone 11", "14.2"))
 }
 
 tasks.xcodebuild {
