@@ -22,11 +22,8 @@ jobs:
     - name: Checkout root repository
       uses: actions/checkout@v2
       with:
-        repository: sandpolis/sandpolis
-    - name: Checkout submodules
-      run: |
-        git submodule update --init --remote --merge com.sandpolis.client.lockstone
-        git submodule update --init --remote --merge plugin/com.sandpolis.plugin.desktop
+        repository: sandpolis/com.sandpolis.client.lockstone
+        submodules: recursive
     - name: Execute build
       run: |
-        gradle --no-daemon :com.sandpolis.client.lockstone:build
+        gradle --no-daemon :build
