@@ -50,4 +50,4 @@ jobs:
         path: plugin/com.sandpolis.plugin.desktop
     - name: Execute build
       run: |
-        gradle --no-daemon :build
+        gradle --no-daemon :simulatorsList :build
