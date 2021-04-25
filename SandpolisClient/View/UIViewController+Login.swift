@@ -10,10 +10,12 @@
 import Foundation
 import UIKit
 import NIOSSL
+import os
 
 extension UIViewController {
 
 	public func connect(address: String, _ completion: @escaping (SandpolisConnection?) ->()) {
+
 		let connection = SandpolisConnection(address, 8768)
 		connection.connectionFuture.whenSuccess {
 			completion(connection)
@@ -51,10 +53,12 @@ extension UIViewController {
 				let login = connection.login(username, password)
 				login.whenSuccess { rs in
 					do {
-						if try Core_Foundation_Outcome.init(serializedData: rs.payload).result {
+						if try !Core_Foundation_Outcome.init(serializedData: rs.payload).result {
 							self.alertError("Login failure", "Invalid credentials")
 							completion(nil)
-						}
+                        } else {
+                            completion(connection)
+                        }
 					} catch {
 						self.alertError("Login failure", "Invalid server response")
 						completion(nil)

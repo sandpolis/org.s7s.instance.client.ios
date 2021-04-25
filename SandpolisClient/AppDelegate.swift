@@ -8,7 +8,6 @@
 //                                                                            //
 //============================================================================//
 import UIKit
-import Firebase
 import os
 
 @UIApplicationMain
@@ -39,16 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func applicationWillTerminate(_ application: UIApplication) {
 		if let connection = SandpolisUtil.connection, connection.isConnected() {
 			connection.disconnect()
-		}
-	}
-
-	private static var configured = false
-
-	/// Ensure that Firebase is configured
-	static func requireFirebase() {
-		if !configured {
-			FirebaseApp.configure()
-			configured = true
 		}
 	}
 }

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		AA0BA54D2554DFDA0042A3A3 /* result.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA5482554DFDA0042A3A3 /* result.pb.swift */; };
 		AA0BA54E2554DFDA0042A3A3 /* platform.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA5492554DFDA0042A3A3 /* platform.pb.swift */; };
-		AA0BA54F2554DFDA0042A3A3 /* build.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA54B2554DFDA0042A3A3 /* build.pb.swift */; };
-		AA0BA5502554DFDA0042A3A3 /* dependency.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA54C2554DFDA0042A3A3 /* dependency.pb.swift */; };
 		AA0BA5632554E04A0042A3A3 /* listener.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA5582554E04A0042A3A3 /* listener.pb.swift */; };
 		AA0BA5652554E04A0042A3A3 /* msg_plugin.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA55B2554E04A0042A3A3 /* msg_plugin.pb.swift */; };
 		AA0BA5662554E04A0042A3A3 /* msg_ping.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0BA55C2554E04A0042A3A3 /* msg_ping.pb.swift */; };
@@ -51,8 +49,6 @@
 		AAD2B6AE25539CCD0071D814 /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = AAD2B6AD25539CCD0071D814 /* NIO */; };
 		AAD2B6B425539D090071D814 /* NIOProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = AAD2B6B325539D090071D814 /* NIOProtobuf */; };
 		AAD2B6BA25539DD20071D814 /* SwiftEventBus in Frameworks */ = {isa = PBXBuildFile; productRef = AAD2B6B925539DD20071D814 /* SwiftEventBus */; };
-		AAD2B6C025539ECB0071D814 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = AAD2B6BF25539ECB0071D814 /* FirebaseAuth */; };
-		AAD2B6C225539ECB0071D814 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AAD2B6C125539ECB0071D814 /* FirebaseFirestore */; };
 		AAD2B6C825539FAA0071D814 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = AAD2B6C725539FAA0071D814 /* SwiftKeychainWrapper */; };
 		AAD2B7322553A5CF0071D814 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6D12553A5CE0071D814 /* ResponseHandler.swift */; };
 		AAD2B7332553A5CF0071D814 /* ManagementHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6D22553A5CE0071D814 /* ManagementHandler.swift */; };
@@ -70,7 +66,6 @@
 		AAD2B73F2553A5CF0071D814 /* RemoteDesktop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6E02553A5CE0071D814 /* RemoteDesktop.swift */; };
 		AAD2B7402553A5CF0071D814 /* ShellSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6E12553A5CE0071D814 /* ShellSession.swift */; };
 		AAD2B7412553A5CF0071D814 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6E22553A5CE0071D814 /* Actions.swift */; };
-		AAD2B7422553A5CF0071D814 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6E42553A5CE0071D814 /* Settings.swift */; };
 		AAD2B7432553A5CF0071D814 /* GroupActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6E62553A5CE0071D814 /* GroupActions.swift */; };
 		AAD2B7442553A5CF0071D814 /* GroupPanelTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6E72553A5CE0071D814 /* GroupPanelTable.swift */; };
 		AAD2B7452553A5CF0071D814 /* GroupHostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6E82553A5CE0071D814 /* GroupHostCell.swift */; };
@@ -116,12 +111,8 @@
 		AAD2B76D2553A5CF0071D814 /* Step3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B71E2553A5CE0071D814 /* Step3.swift */; };
 		AAD2B76E2553A5CF0071D814 /* ServerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B71F2553A5CE0071D814 /* ServerCreator.swift */; };
 		AAD2B76F2553A5CF0071D814 /* UITextField+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B7202553A5CE0071D814 /* UITextField+Icon.swift */; };
-		AAD2B7702553A5CF0071D814 /* LoginServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B7222553A5CE0071D814 /* LoginServer.swift */; };
 		AAD2B7712553A5CF0071D814 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B7232553A5CE0071D814 /* Login.swift */; };
-		AAD2B7722553A5CF0071D814 /* LoginAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B7242553A5CE0071D814 /* LoginAccount.swift */; };
 		AAD2B7732553A5CF0071D814 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B7252553A5CE0071D814 /* BackgroundView.swift */; };
-		AAD2B7742553A5CF0071D814 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B7262553A5CE0071D814 /* CreateAccount.swift */; };
-		AAD2B7752553A5CF0071D814 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B7272553A5CE0071D814 /* LoginViewController.swift */; };
 		AAD2B7762553A5CF0071D814 /* SandpolisServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B7292553A5CF0071D814 /* SandpolisServer.swift */; };
 		AAD2B7772553A5CF0071D814 /* STAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B72A2553A5CF0071D814 /* STAttribute.swift */; };
 		AAD2B7782553A5CF0071D814 /* STDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B72B2553A5CF0071D814 /* STDocument.swift */; };
@@ -129,9 +120,9 @@
 		AAD2B77A2553A5CF0071D814 /* SandpolisUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B72E2553A5CF0071D814 /* SandpolisUtil.swift */; };
 		AAD2B77B2553A5CF0071D814 /* CloudUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B72F2553A5CF0071D814 /* CloudUtil.swift */; };
 		AAD2B77C2553A5CF0071D814 /* FormatUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B7302553A5CF0071D814 /* FormatUtil.swift */; };
-		AAD2B77D2553A5CF0071D814 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AAD2B7312553A5CF0071D814 /* GoogleService-Info.plist */; };
 		AAD2B78C2553AC1F0071D814 /* Highlightr in Frameworks */ = {isa = PBXBuildFile; productRef = AAD2B78B2553AC1F0071D814 /* Highlightr */; };
 		AAD2B7B62554DA380071D814 /* SwiftValidators in Frameworks */ = {isa = PBXBuildFile; productRef = AAD2B7B52554DA380071D814 /* SwiftValidators */; };
+		AEBA95392634A79E00CDD9EC /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBA95382634A79E00CDD9EC /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,8 +145,6 @@
 /* Begin PBXFileReference section */
 		AA0BA5482554DFDA0042A3A3 /* result.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = result.pb.swift; sourceTree = "<group>"; };
 		AA0BA5492554DFDA0042A3A3 /* platform.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = platform.pb.swift; sourceTree = "<group>"; };
-		AA0BA54B2554DFDA0042A3A3 /* build.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = build.pb.swift; sourceTree = "<group>"; };
-		AA0BA54C2554DFDA0042A3A3 /* dependency.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dependency.pb.swift; sourceTree = "<group>"; };
 		AA0BA5582554E04A0042A3A3 /* listener.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listener.pb.swift; sourceTree = "<group>"; };
 		AA0BA55B2554E04A0042A3A3 /* msg_plugin.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_plugin.pb.swift; sourceTree = "<group>"; };
 		AA0BA55C2554E04A0042A3A3 /* msg_ping.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg_ping.pb.swift; sourceTree = "<group>"; };
@@ -213,7 +202,6 @@
 		AAD2B6E02553A5CE0071D814 /* RemoteDesktop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteDesktop.swift; sourceTree = "<group>"; };
 		AAD2B6E12553A5CE0071D814 /* ShellSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShellSession.swift; sourceTree = "<group>"; };
 		AAD2B6E22553A5CE0071D814 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
-		AAD2B6E42553A5CE0071D814 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		AAD2B6E62553A5CE0071D814 /* GroupActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupActions.swift; sourceTree = "<group>"; };
 		AAD2B6E72553A5CE0071D814 /* GroupPanelTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupPanelTable.swift; sourceTree = "<group>"; };
 		AAD2B6E82553A5CE0071D814 /* GroupHostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupHostCell.swift; sourceTree = "<group>"; };
@@ -259,12 +247,8 @@
 		AAD2B71E2553A5CE0071D814 /* Step3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step3.swift; sourceTree = "<group>"; };
 		AAD2B71F2553A5CE0071D814 /* ServerCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCreator.swift; sourceTree = "<group>"; };
 		AAD2B7202553A5CE0071D814 /* UITextField+Icon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Icon.swift"; sourceTree = "<group>"; };
-		AAD2B7222553A5CE0071D814 /* LoginServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginServer.swift; sourceTree = "<group>"; };
 		AAD2B7232553A5CE0071D814 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		AAD2B7242553A5CE0071D814 /* LoginAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAccount.swift; sourceTree = "<group>"; };
 		AAD2B7252553A5CE0071D814 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
-		AAD2B7262553A5CE0071D814 /* CreateAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
-		AAD2B7272553A5CE0071D814 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AAD2B7292553A5CF0071D814 /* SandpolisServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandpolisServer.swift; sourceTree = "<group>"; };
 		AAD2B72A2553A5CF0071D814 /* STAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STAttribute.swift; sourceTree = "<group>"; };
 		AAD2B72B2553A5CF0071D814 /* STDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STDocument.swift; sourceTree = "<group>"; };
@@ -272,7 +256,7 @@
 		AAD2B72E2553A5CF0071D814 /* SandpolisUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandpolisUtil.swift; sourceTree = "<group>"; };
 		AAD2B72F2553A5CF0071D814 /* CloudUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudUtil.swift; sourceTree = "<group>"; };
 		AAD2B7302553A5CF0071D814 /* FormatUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatUtil.swift; sourceTree = "<group>"; };
-		AAD2B7312553A5CF0071D814 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AEBA95382634A79E00CDD9EC /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,14 +266,12 @@
 			files = (
 				AAD2B78C2553AC1F0071D814 /* Highlightr in Frameworks */,
 				AAD2B6AE25539CCD0071D814 /* NIO in Frameworks */,
-				AAD2B6C025539ECB0071D814 /* FirebaseAuth in Frameworks */,
 				AA79B3E62556178D007E8A6B /* NIOSSL in Frameworks */,
 				AAD2B6BA25539DD20071D814 /* SwiftEventBus in Frameworks */,
 				AAD2B6A625539C720071D814 /* Charts in Frameworks */,
 				AAD2B6B425539D090071D814 /* NIOProtobuf in Frameworks */,
 				AAD2B7B62554DA380071D814 /* SwiftValidators in Frameworks */,
 				AAD2B6C825539FAA0071D814 /* SwiftKeychainWrapper in Frameworks */,
-				AAD2B6C225539ECB0071D814 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,19 +297,9 @@
 			children = (
 				AA0BA5482554DFDA0042A3A3 /* result.pb.swift */,
 				AA0BA5492554DFDA0042A3A3 /* platform.pb.swift */,
-				AA0BA54A2554DFDA0042A3A3 /* soi */,
 			);
 			name = com.sandpolis.core.foundation;
 			path = ../../module/com.sandpolis.core.foundation/gen/main/swift/com/sandpolis/core/foundation;
-			sourceTree = "<group>";
-		};
-		AA0BA54A2554DFDA0042A3A3 /* soi */ = {
-			isa = PBXGroup;
-			children = (
-				AA0BA54B2554DFDA0042A3A3 /* build.pb.swift */,
-				AA0BA54C2554DFDA0042A3A3 /* dependency.pb.swift */,
-			);
-			path = soi;
 			sourceTree = "<group>";
 		};
 		AA0BA5572554E04A0042A3A3 /* com.sandpolis.core.instance */ = {
@@ -503,7 +475,6 @@
 				AAD2B67A25539BCC0071D814 /* Assets.xcassets */,
 				AAD2B67C25539BCC0071D814 /* LaunchScreen.storyboard */,
 				AAD2B67F25539BCC0071D814 /* Info.plist */,
-				AAD2B7312553A5CF0071D814 /* GoogleService-Info.plist */,
 			);
 			path = SandpolisClient;
 			sourceTree = "<group>";
@@ -545,8 +516,8 @@
 		AAD2B6DA2553A5CE0071D814 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AEBA95372634A79E00CDD9EC /* Settings */,
 				AAD2B6DB2553A5CE0071D814 /* ControlPanel */,
-				AAD2B6E32553A5CE0071D814 /* Settings */,
 				AAD2B6E52553A5CE0071D814 /* GroupPanel */,
 				AAD2B6EB2553A5CE0071D814 /* AgentManager */,
 				AAD2B6F62553A5CE0071D814 /* MacroResults */,
@@ -577,14 +548,6 @@
 				AAD2B6E22553A5CE0071D814 /* Actions.swift */,
 			);
 			path = ControlPanel;
-			sourceTree = "<group>";
-		};
-		AAD2B6E32553A5CE0071D814 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				AAD2B6E42553A5CE0071D814 /* Settings.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		AAD2B6E52553A5CE0071D814 /* GroupPanel */ = {
@@ -742,12 +705,8 @@
 		AAD2B7212553A5CE0071D814 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				AAD2B7222553A5CE0071D814 /* LoginServer.swift */,
 				AAD2B7232553A5CE0071D814 /* Login.swift */,
-				AAD2B7242553A5CE0071D814 /* LoginAccount.swift */,
 				AAD2B7252553A5CE0071D814 /* BackgroundView.swift */,
-				AAD2B7262553A5CE0071D814 /* CreateAccount.swift */,
-				AAD2B7272553A5CE0071D814 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -789,6 +748,14 @@
 			name = Proto;
 			sourceTree = "<group>";
 		};
+		AEBA95372634A79E00CDD9EC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AEBA95382634A79E00CDD9EC /* Settings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -810,8 +777,6 @@
 				AAD2B6AD25539CCD0071D814 /* NIO */,
 				AAD2B6B325539D090071D814 /* NIOProtobuf */,
 				AAD2B6B925539DD20071D814 /* SwiftEventBus */,
-				AAD2B6BF25539ECB0071D814 /* FirebaseAuth */,
-				AAD2B6C125539ECB0071D814 /* FirebaseFirestore */,
 				AAD2B6C725539FAA0071D814 /* SwiftKeychainWrapper */,
 				AAD2B78B2553AC1F0071D814 /* Highlightr */,
 				AAD2B7B52554DA380071D814 /* SwiftValidators */,
@@ -893,7 +858,6 @@
 				AAD2B6AA25539CCD0071D814 /* XCRemoteSwiftPackageReference "swift-nio" */,
 				AAD2B6B225539D090071D814 /* XCRemoteSwiftPackageReference "swift-nio-protobuf" */,
 				AAD2B6B825539DD20071D814 /* XCRemoteSwiftPackageReference "SwiftEventBus" */,
-				AAD2B6BE25539ECB0071D814 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				AAD2B6C625539FAA0071D814 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				AAD2B78A2553AC1E0071D814 /* XCRemoteSwiftPackageReference "Highlightr" */,
 				AAD2B7B42554DA370071D814 /* XCRemoteSwiftPackageReference "SwiftValidators" */,
@@ -920,7 +884,6 @@
 				AAD2B67B25539BCC0071D814 /* Assets.xcassets in Resources */,
 				AAD2B75D2553A5CF0071D814 /* terminal.html in Resources */,
 				AAD2B67925539BC60071D814 /* Main.storyboard in Resources */,
-				AAD2B77D2553A5CF0071D814 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -946,8 +909,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA0BA57A2554E0AF0042A3A3 /* msg_stream.pb.swift in Sources */,
-				AAD2B7742553A5CF0071D814 /* CreateAccount.swift in Sources */,
 				AA0BA5792554E0AF0042A3A3 /* msg_network.pb.swift in Sources */,
+				AEBA95392634A79E00CDD9EC /* Settings.swift in Sources */,
 				AA0BA5662554E04A0042A3A3 /* msg_ping.pb.swift in Sources */,
 				AAD2B7472553A5CF0071D814 /* GroupControlPanel.swift in Sources */,
 				AAD2B73E2553A5CF0071D814 /* Overview.swift in Sources */,
@@ -979,7 +942,6 @@
 				AAD2B7792553A5CF0071D814 /* SandpolisProfile.swift in Sources */,
 				AAD2B7562553A5CF0071D814 /* MacroCell.swift in Sources */,
 				AAD2B7582553A5CF0071D814 /* MacroSelect.swift in Sources */,
-				AAD2B7722553A5CF0071D814 /* LoginAccount.swift in Sources */,
 				AAD2B7732553A5CF0071D814 /* BackgroundView.swift in Sources */,
 				AA79B3B42554E68C007E8A6B /* msg_login.pb.swift in Sources */,
 				AAD2B7682553A5CF0071D814 /* FolderUpCell.swift in Sources */,
@@ -994,7 +956,6 @@
 				AAD2B75C2553A5CF0071D814 /* UIViewController+Login.swift in Sources */,
 				AAD2B77A2553A5CF0071D814 /* SandpolisUtil.swift in Sources */,
 				AAD2B75B2553A5CF0071D814 /* ServerManager.swift in Sources */,
-				AA0BA54F2554DFDA0042A3A3 /* build.pb.swift in Sources */,
 				AAD2B76D2553A5CF0071D814 /* Step3.swift in Sources */,
 				AAD2B7712553A5CF0071D814 /* Login.swift in Sources */,
 				AAD2B73B2553A5CF0071D814 /* OverviewTable.swift in Sources */,
@@ -1004,7 +965,6 @@
 				AAD2B74D2553A5CF0071D814 /* ClientAnnotation.swift in Sources */,
 				AAD2B76A2553A5CF0071D814 /* Step2.swift in Sources */,
 				AAD2B7652553A5CF0071D814 /* CloudPricing.swift in Sources */,
-				AAD2B7702553A5CF0071D814 /* LoginServer.swift in Sources */,
 				AAD2B7612553A5CF0071D814 /* Ubuntu.swift in Sources */,
 				AA79B3C32554E6C3007E8A6B /* msg_power.pb.swift in Sources */,
 				AAD2B7452553A5CF0071D814 /* GroupHostCell.swift in Sources */,
@@ -1035,14 +995,11 @@
 				AA0BA5892554E1300042A3A3 /* msg_desktop.pb.swift in Sources */,
 				AAD2B7322553A5CF0071D814 /* ResponseHandler.swift in Sources */,
 				AA0BA54D2554DFDA0042A3A3 /* result.pb.swift in Sources */,
-				AA0BA5502554DFDA0042A3A3 /* dependency.pb.swift in Sources */,
 				AA79B3EB255619FA007E8A6B /* Oid.swift in Sources */,
-				AAD2B7422553A5CF0071D814 /* Settings.swift in Sources */,
 				AAD2B76E2553A5CF0071D814 /* ServerCreator.swift in Sources */,
 				AAD2B74C2553A5CF0071D814 /* ClientMap.swift in Sources */,
 				AAD2B7762553A5CF0071D814 /* SandpolisServer.swift in Sources */,
 				AA0BA57B2554E0AF0042A3A3 /* msg_cvid.pb.swift in Sources */,
-				AAD2B7752553A5CF0071D814 /* LoginViewController.swift in Sources */,
 				AAD2B75A2553A5CF0071D814 /* ServerCell.swift in Sources */,
 				AA0BA58A2554E1300042A3A3 /* msg_clipboard.pb.swift in Sources */,
 				AAD2B7772553A5CF0071D814 /* STAttribute.swift in Sources */,
@@ -1428,14 +1385,6 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		AAD2B6BE25539ECB0071D814 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
 		AAD2B6C625539FAA0071D814 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
@@ -1487,16 +1436,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AAD2B6B825539DD20071D814 /* XCRemoteSwiftPackageReference "SwiftEventBus" */;
 			productName = SwiftEventBus;
-		};
-		AAD2B6BF25539ECB0071D814 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AAD2B6BE25539ECB0071D814 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		AAD2B6C125539ECB0071D814 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AAD2B6BE25539ECB0071D814 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
 		};
 		AAD2B6C725539FAA0071D814 /* SwiftKeychainWrapper */ = {
 			isa = XCSwiftPackageProductDependency;

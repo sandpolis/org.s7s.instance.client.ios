@@ -8,8 +8,6 @@
 //                                                                            //
 //============================================================================//
 import UIKit
-import FirebaseAuth
-import Highlightr
 import os
 
 class Settings: UITableViewController {
@@ -38,17 +36,6 @@ class Settings: UITableViewController {
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
-
-		if indexPath.row == 2 {
-			// Logout
-			do {
-				try Auth.auth().signOut()
-			} catch {
-				os_log("Failed to logout: %s", error.localizedDescription)
-			}
-			UserDefaults.standard.set(false, forKey: "login.auto")
-			performSegue(withIdentifier: "UnwindLoginSegue", sender: self)
-		}
 	}
 
 	@IBAction func hostViewChanged(_ sender: Any) {

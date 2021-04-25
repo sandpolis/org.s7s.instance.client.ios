@@ -8,7 +8,6 @@
 //                                                                            //
 //============================================================================//
 import UIKit
-import FirebaseFirestore
 import Highlightr
 
 class MacroEditor: UIViewController {
@@ -24,10 +23,10 @@ class MacroEditor: UIViewController {
 	private var saveButton: UIBarButtonItem!
 
 	/// The macro being edited or nil for a new macro
-	var macro: DocumentSnapshot!
+	//var macro: DocumentSnapshot!
 
 	/// The macro reference
-	var macroReference: DocumentReference!
+	//var macroReference: DocumentReference!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -38,8 +37,8 @@ class MacroEditor: UIViewController {
 		nameField.addTarget(self, action: #selector(refreshSaveButton), for: .editingChanged)
 		navigationItem.titleView = nameField
 
-		saveButton = UIBarButtonItem(title: macro != nil ? "Update" : "Save", style: .done, target: self, action: #selector(saveMacro))
-		navigationItem.rightBarButtonItem = saveButton
+		//saveButton = UIBarButtonItem(title: macro != nil ? "Update" : "Save", style: .done, target: self, action: #selector(saveMacro))
+		//navigationItem.rightBarButtonItem = saveButton
 
 		let layoutManager = NSLayoutManager()
 		textStorage.addLayoutManager(layoutManager)
@@ -60,7 +59,7 @@ class MacroEditor: UIViewController {
 			changeTheme("zenburn")
 		}
 
-		if macro != nil {
+		/*if macro != nil {
 			nameField.text = macro["name"] as? String
 			textView.text = macro["script"] as? String
 
@@ -81,7 +80,7 @@ class MacroEditor: UIViewController {
 			// Default to bash
 			platformSelector.selectedSegmentIndex = 2
 			platformChanged(self)
-		}
+		}*/
 	}
 
 	func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -108,11 +107,11 @@ class MacroEditor: UIViewController {
 			break
 		}
 
-		macroReference.setData([
+		/*macroReference.setData([
 			"name": nameField.text!,
 			"script": textView.text!,
 			"type": type
-		])
+		])*/
 
 		navigationController?.popViewController(animated: true)
 	}

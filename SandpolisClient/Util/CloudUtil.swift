@@ -8,12 +8,11 @@
 //                                                                            //
 //============================================================================//
 import Foundation
-import FirebaseAuth
 
 class CloudUtil {
 
 	static func createCloudInstance(hostname: String, username: String, password: String, location: String, _ completion: @escaping(NSDictionary?, Error?) -> Void) {
-		Auth.auth().currentUser?.getIDToken { token, error in
+		/*Auth.auth().currentUser?.getIDToken { token, error in
 			guard error == nil else {
 				completion(nil, error)
 				return
@@ -42,11 +41,11 @@ class CloudUtil {
 					completion(nil, error)
 				}
 			}.resume()
-		}
+		}*/
 	}
 
 	static func addCloudClient(server: SandpolisServer, token: String, _ completion: @escaping(NSDictionary?, Error?) -> Void) {
-		Auth.auth().currentUser?.getIDToken { authToken, error in
+		/*Auth.auth().currentUser?.getIDToken { authToken, error in
 			guard error == nil else {
 				completion(nil, error)
 				return
@@ -73,6 +72,6 @@ class CloudUtil {
 					completion(nil, error)
 				}
 			}.resume()
-		}
+		}*/
 	}
 }

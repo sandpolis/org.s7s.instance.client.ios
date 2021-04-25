@@ -8,34 +8,20 @@
 //                                                                            //
 //============================================================================//
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
 import NIOTLS
 
 class ServerManager: UITableViewController {
 
-	/// Firebase reference
-	private let ref = Firestore.firestore().collection("/user/\(Auth.auth().currentUser!.uid)/server")
-
 	private var servers = [SandpolisServer]()
-
-	private var refListener: ListenerRegistration!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		// Synchronize table data
-		refListener = ref.addSnapshotListener({ querySnapshot, error in
-			guard let servers = querySnapshot?.documents else {
-				return
-			}
+		// Load table data from user defaults
+        servers = (UserDefaults.standard.stringArray(forKey: "servers") ?? []).map(SandpolisServer.init).filter { $0 != nil }.map { $0! }
 
-			self.servers = servers.map { server -> SandpolisServer in
-				return SandpolisServer(server)
-			}
-			self.tableView.reloadData()
-			self.refreshServerStates()
-		})
+        self.tableView.reloadData()
+        self.refreshServerStates()
 
 		// Setup refresh control
 		refreshControl = UIRefreshControl()
@@ -85,7 +71,7 @@ class ServerManager: UITableViewController {
 		if let online = server.online {
 			if online {
 				tableView.allowsSelection = false
-				login(address: server.address, username: server.username, password: server.password) { connection in
+				login(address: server.address, username: server.username, password: server.getPassword()!) { connection in
 					if let connection = connection {
 						SandpolisUtil.connection = connection
 						//connection.openProfileStream()
@@ -115,7 +101,7 @@ class ServerManager: UITableViewController {
 	override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath:
 			IndexPath) -> UISwipeActionsConfiguration? {
 		let delete = UIContextualAction(style: .destructive, title: "Delete") { action, view, completion in
-			self.servers[indexPath.row].reference.delete()
+			//self.servers[indexPath.row].reference.delete()
 			completion(true)
 		}
 		let edit = UIContextualAction(style: .normal, title: "Edit") { action, view, completion in
@@ -128,14 +114,12 @@ class ServerManager: UITableViewController {
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "AddServerSegue",
-			let dest = segue.destination as? AddServer {
-			dest.serverReference = ref.document()
-		} else if segue.identifier == "EditServerSegue",
+        if segue.identifier == "AddServerSegue",
+            let _ = segue.destination as? AddServer {
+        }else if segue.identifier == "EditServerSegue",
 			let dest = segue.destination as? AddServer {
 			if let index = sender as? IndexPath {
 				dest.server = servers[index.row]
-				dest.serverReference = dest.server.reference
 			}
 		} else if segue.identifier == "ShowHostSegue",
 			let dest = segue.destination as? ClientManager {

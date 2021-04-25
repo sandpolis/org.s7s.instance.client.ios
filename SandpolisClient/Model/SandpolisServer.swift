@@ -7,12 +7,11 @@
 //  as published by the Mozilla Foundation.                                   //
 //                                                                            //
 //============================================================================//
-import FirebaseFirestore
+import SwiftKeychainWrapper
+import Foundation
 
 /// Represents a Sandpolis server
 class SandpolisServer {
-
-	var reference: DocumentReference
 
 	/// The server name
 	var name: String
@@ -23,24 +22,39 @@ class SandpolisServer {
 	/// The client username for the server
 	var username: String
 
-	/// The client password for the server (unsalted SHA256)
-	var password: String
-
-	/// Whether the server is a cloud server
-	var cloud: Bool
-
 	/// Whether the server is online
 	var online: Bool?
 
 	/// The server's country code
 	var countryCode: String?
 
-	init(_ server: DocumentSnapshot) {
-		self.reference = server.reference
-		self.name = server["name"] as! String
-		self.address = server["address"] as! String
-		self.username = server["username"] as! String
-		self.password = server["password"] as! String
-		self.cloud = server["cloud"] as! Bool
+    init?(_ data: String) {
+        guard let dictionary = try? JSONSerialization.jsonObject(with: data.data(using: .utf8)!, options: []) as? [String: Any] else {
+            return nil
+        }
+        
+        if let name = dictionary["name"] as? String {
+            self.name = name
+        } else {
+            return nil
+        }
+        
+        if let address = dictionary["address"] as? String {
+            self.address = address
+        } else {
+            return nil
+        }
+        
+        if let username = dictionary["username"] as? String {
+            self.username = username
+        } else {
+            return nil
+        }
+
+        self.countryCode = ""
 	}
+
+    func getPassword() -> String? {
+        return KeychainWrapper.standard.string(forKey: "server.\(address).password")
+    }
 }

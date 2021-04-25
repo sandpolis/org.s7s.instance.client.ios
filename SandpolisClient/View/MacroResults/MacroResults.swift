@@ -8,12 +8,11 @@
 //                                                                            //
 //============================================================================//
 import UIKit
-import FirebaseFirestore
 
 class MacroResults: UITableViewController, CollapsibleTableViewHeaderDelegate {
 
 	/// The macro to execute
-	var macro: DocumentSnapshot!
+	//var macro: DocumentSnapshot!
 
 	/// The list of target clients
 	var profiles = [SandpolisProfile]()
@@ -40,7 +39,7 @@ class MacroResults: UITableViewController, CollapsibleTableViewHeaderDelegate {
 
 		// Process the target shell type
 		let shell: Plugin_Shell_Msg_Shell
-		switch macro["type"] as! String {
+		/*switch macro["type"] as! String {
 		case "powershell":
 			shell = .pwsh
 		case "cmd":
@@ -70,7 +69,7 @@ class MacroResults: UITableViewController, CollapsibleTableViewHeaderDelegate {
 					break
 				}
 			}
-		}
+		}*/
 	}
 
 	@objc func goBack() {

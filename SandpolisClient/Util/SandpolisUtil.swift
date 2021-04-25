@@ -31,6 +31,7 @@ final class SandpolisUtil {
 			_ = try bootstrap.connect(host: server, port: port).wait()
 			return true
 		} catch {
+            os_log("Failed to probe: \(error as NSObject)")
 			return false
 		}
 	}

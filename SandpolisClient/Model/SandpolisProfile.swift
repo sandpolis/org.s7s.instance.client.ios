@@ -32,7 +32,7 @@ class SandpolisProfile {
 	lazy var instanceFlavor = STAttribute<Core_Instance_InstanceFlavor>(InstanceOid.instanceFlavor.resolve(uuid))
 	lazy var screenshot = STAttribute<Data>(InstanceOid.screenshot.resolve(uuid))
 
-	func merge(snapshot: Core_Instance_ProtoDocument) {
+	/*func merge(snapshot: Core_Instance_ProtoDocument) {
 		merge(oid: "", snapshot: snapshot)
 	}
 
@@ -51,7 +51,7 @@ class SandpolisProfile {
 				break
 			}
 		}
-	}
+	}*/
 
 	/// The client's UUID
 	let uuid: String

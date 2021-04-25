@@ -8,7 +8,6 @@
 //                                                                            //
 //============================================================================//
 import UIKit
-import FirebaseFirestore
 
 /// A table entry representing a macro
 class MacroCell: UITableViewCell {
@@ -17,7 +16,7 @@ class MacroCell: UITableViewCell {
 	@IBOutlet weak var type: UILabel!
 	@IBOutlet weak var size: UILabel!
 
-	func setContent(_ macro: DocumentSnapshot) {
+	/*func setContent(_ macro: DocumentSnapshot) {
 		// Macro name
 		name.text = macro["name"] as? String
 
@@ -30,5 +29,5 @@ class MacroCell: UITableViewCell {
 
 		// Macro type
 		type.text = macro["type"] as? String
-	}
+	}*/
 }

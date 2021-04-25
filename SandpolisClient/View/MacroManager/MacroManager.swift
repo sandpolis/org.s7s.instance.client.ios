@@ -8,19 +8,10 @@
 //                                                                            //
 //============================================================================//
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
 
 class MacroManager: UITableViewController {
 
-	/// Firebase reference
-	private let ref = Firestore.firestore().collection("/user/\(Auth.auth().currentUser!.uid)/macro")
-
-	private var macroList = [DocumentSnapshot]()
-
-	private var macroListener: ListenerRegistration?
-
-	override func viewWillAppear(_ animated: Bool) {
+	/*override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 
 		// Synchronize table data
@@ -80,5 +71,5 @@ class MacroManager: UITableViewController {
 		} else {
 			fatalError("Unexpected segue: \(segue.identifier ?? "unknown")")
 		}
-	}
+	}*/
 }

@@ -161,9 +161,10 @@ public class SandpolisConnection {
 	/// - Returns: A response future
 	func login(_ username: String, _ password: String) -> EventLoopFuture<Core_Net_MSG> {
 		var rq = Core_Net_MSG.with {
+            $0.payloadType = 1815052312
 			$0.payload = try! Core_Clientserver_Msg_RQ_Login.with {
 				$0.username = username
-				$0.password = SHA256.hash(data: password.data(using: .utf8)!).map { String(format: "%02hhx", $0) }.joined()
+				$0.password = SHA512.hash(data: password.data(using: .utf8)!).map { String(format: "%02hhx", $0) }.joined()
 			}.serializedData()
 		}
 
@@ -177,7 +178,7 @@ public class SandpolisConnection {
 	///   - target: The target profile
 	///   - attribute: The target OID
 	/// - Returns: A response future
-	func snapshot_collection(_ target: SandpolisProfile, _ oid: String) -> EventLoopFuture<Core_Instance_ProtoDocument> {
+	/*func snapshot_collection(_ target: SandpolisProfile, _ oid: String) -> EventLoopFuture<Core_Instance_ProtoDocument> {
 		var rq = Core_Net_MSG.with {
 			$0.to = target.cvid
 			$0.payload = try! Core_Net_Msg_RQ_STSnapshot.with {
@@ -193,5 +194,5 @@ public class SandpolisConnection {
 				return Core_Instance_ProtoDocument.init()
 			}
 		}
-	}
+	}*/
 }

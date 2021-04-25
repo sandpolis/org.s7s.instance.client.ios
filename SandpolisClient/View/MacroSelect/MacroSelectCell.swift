@@ -8,14 +8,13 @@
 //                                                                            //
 //============================================================================//
 import UIKit
-import FirebaseFirestore
 
 class MacroSelectCell: UITableViewCell {
 
 	@IBOutlet weak var name: UILabel!
 
-	func setContent(_ macro: DocumentSnapshot) {
+	/*func setContent(_ macro: DocumentSnapshot) {
 		// Macro name
 		name.text = macro["name"] as? String
-	}
+	}*/
 }

@@ -8,8 +8,8 @@
 //                                                                            //
 //============================================================================//
 import UIKit
-import FirebaseFirestore
 import SwiftValidators
+import SwiftKeychainWrapper
 
 class AddServer: UIViewController, UITextFieldDelegate {
 
@@ -19,11 +19,8 @@ class AddServer: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var username: UITextField!
 	@IBOutlet weak var password: UITextField!
 	@IBOutlet weak var status: UILabel!
-	@IBOutlet weak var cloudButton: UIButton!
 
 	var server: SandpolisServer!
-
-	var serverReference: DocumentReference!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -33,13 +30,8 @@ class AddServer: UIViewController, UITextFieldDelegate {
 			name.text = server.name
 			address.text = server.address
 			username.text = server.username
-			password.text = server.password
-			cloudButton.isHidden = true
 			titleLabel.title = "Edit Server"
 		}
-
-		// Search for unused subscriptions
-		cloudButton.setTitle(true ? "Don't have your own server yet?" : "Launch new cloud server", for: .normal)
 
 		name.delegate = self
 		name.tag = 0
@@ -92,24 +84,25 @@ class AddServer: UIViewController, UITextFieldDelegate {
 			return
 		}
 
-		serverReference.setData([
-			"name": name.text!,
-			"address": address.text!,
-			"username": username.text!,
-			"password": password.text!,
-			"cloud": false
-		])
+        // Save credentials to keychain
+        KeychainWrapper.standard.set(self.password.text!, forKey: "server.\(self.address.text!).password")
+
+        // Save server metadata to user defaults
+        var servers = UserDefaults.standard.stringArray(forKey: "servers") ?? []
+        servers.append("""
+            {
+                "address": "\(self.address.text!)",
+                "username": "\(self.username.text!)",
+                "name": "\(self.name.text!)"
+            }
+        """)
+        UserDefaults.standard.set(servers, forKey: "servers")
 
 		dismiss(animated: true, completion: nil)
 	}
 
 	@IBAction func cancelButtonPressed(_ sender: Any) {
 		dismiss(animated: true, completion: nil)
-	}
-
-	@IBAction func cloudButtonPressed(_ sender: Any) {
-		performSegue(withIdentifier: "CreateServerSegue", sender: self)
-		//performSegue(withIdentifier: "PricingSegue", sender: self)
 	}
 
 	@objc func refreshAddress() {

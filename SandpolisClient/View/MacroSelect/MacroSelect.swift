@@ -8,24 +8,22 @@
 //                                                                            //
 //============================================================================//
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
 
 class MacroSelect: UITableViewController {
 
 	/// Firebase reference
-	private let ref = Firestore.firestore().collection("/user/\(Auth.auth().currentUser!.uid)/macro")
+	//private let ref = Firestore.firestore().collection("/user/\(Auth.auth().currentUser!.uid)/macro")
 
 	var profiles = [SandpolisProfile]()
 
-	var macroList = [DocumentSnapshot]()
+	//var macroList = [DocumentSnapshot]()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		navigationItem.title = "\(profiles.count) clients selected"
 
 		// Synchronize list with Firebase
-		ref.getDocuments { querySnapshot, error in
+		/*ref.getDocuments { querySnapshot, error in
 			guard let macros = querySnapshot?.documents else {
 				return
 			}
@@ -60,7 +58,7 @@ class MacroSelect: UITableViewController {
 				return false
 			}
 			self.tableView.reloadData()
-		}
+		}*/
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,13 +66,13 @@ class MacroSelect: UITableViewController {
 			let resultView = segue.destination as? MacroResults {
 
 			resultView.profiles = profiles
-			resultView.macro = macroList[tableView.indexPathForSelectedRow!.row]
+			//resultView.macro = macroList[tableView.indexPathForSelectedRow!.row]
 		} else {
 			fatalError("Unexpected segue: \(segue.identifier ?? "unknown")")
 		}
 	}
 
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	/*override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if macroList.count == 0 {
 			let message = UILabel(frame: tableView.bounds)
 			message.textAlignment = .center
@@ -86,11 +84,11 @@ class MacroSelect: UITableViewController {
 			tableView.backgroundView = nil
 		}
 		return macroList.count
-	}
+	}*/
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "MacroSelectCell") as! MacroSelectCell
-		cell.setContent(macroList[indexPath.row])
+		//cell.setContent(macroList[indexPath.row])
 		return cell
 	}
 
