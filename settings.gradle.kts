@@ -9,3 +9,9 @@
 //============================================================================//
 
 rootProject.name = "com.sandpolis.client.lockstone"
+
+include("module:com.sandpolis.core.foundation")
+include("module:com.sandpolis.core.instance")
+include("module:com.sandpolis.core.net")
+include("module:com.sandpolis.core.clientserver")
+include("plugin:com.sandpolis.plugin.desktop")
