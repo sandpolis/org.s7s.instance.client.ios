@@ -71,13 +71,12 @@
 		AAD2B7452553A5CF0071D814 /* GroupHostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6E82553A5CE0071D814 /* GroupHostCell.swift */; };
 		AAD2B7462553A5CF0071D814 /* GroupOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6E92553A5CE0071D814 /* GroupOverview.swift */; };
 		AAD2B7472553A5CF0071D814 /* GroupControlPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6EA2553A5CE0071D814 /* GroupControlPanel.swift */; };
-		AAD2B7482553A5CF0071D814 /* ClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6ED2553A5CE0071D814 /* ClientCell.swift */; };
-		AAD2B7492553A5CF0071D814 /* ClientList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6EE2553A5CE0071D814 /* ClientList.swift */; };
-		AAD2B74A2553A5CF0071D814 /* ClientScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6F02553A5CE0071D814 /* ClientScanner.swift */; };
-		AAD2B74B2553A5CF0071D814 /* ClientManagerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6F12553A5CE0071D814 /* ClientManagerWrapper.swift */; };
-		AAD2B74C2553A5CF0071D814 /* ClientMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6F32553A5CE0071D814 /* ClientMap.swift */; };
-		AAD2B74D2553A5CF0071D814 /* ClientAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6F42553A5CE0071D814 /* ClientAnnotation.swift */; };
-		AAD2B74E2553A5CF0071D814 /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6F52553A5CE0071D814 /* ClientManager.swift */; };
+		AAD2B7482553A5CF0071D814 /* AgentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6ED2553A5CE0071D814 /* AgentCell.swift */; };
+		AAD2B7492553A5CF0071D814 /* AgentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6EE2553A5CE0071D814 /* AgentList.swift */; };
+		AAD2B74A2553A5CF0071D814 /* AgentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6F02553A5CE0071D814 /* AgentScanner.swift */; };
+		AAD2B74C2553A5CF0071D814 /* AgentMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6F32553A5CE0071D814 /* AgentMap.swift */; };
+		AAD2B74D2553A5CF0071D814 /* AgentAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6F42553A5CE0071D814 /* AgentAnnotation.swift */; };
+		AAD2B74E2553A5CF0071D814 /* AgentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6F52553A5CE0071D814 /* AgentManager.swift */; };
 		AAD2B74F2553A5CF0071D814 /* MacroResultHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6F72553A5CE0071D814 /* MacroResultHeader.swift */; };
 		AAD2B7502553A5CF0071D814 /* MacroResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6F82553A5CE0071D814 /* MacroResultCell.swift */; };
 		AAD2B7512553A5CF0071D814 /* MacroResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2B6F92553A5CE0071D814 /* MacroResults.swift */; };
@@ -207,13 +206,12 @@
 		AAD2B6E82553A5CE0071D814 /* GroupHostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupHostCell.swift; sourceTree = "<group>"; };
 		AAD2B6E92553A5CE0071D814 /* GroupOverview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupOverview.swift; sourceTree = "<group>"; };
 		AAD2B6EA2553A5CE0071D814 /* GroupControlPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupControlPanel.swift; sourceTree = "<group>"; };
-		AAD2B6ED2553A5CE0071D814 /* ClientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientCell.swift; sourceTree = "<group>"; };
-		AAD2B6EE2553A5CE0071D814 /* ClientList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientList.swift; sourceTree = "<group>"; };
-		AAD2B6F02553A5CE0071D814 /* ClientScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientScanner.swift; sourceTree = "<group>"; };
-		AAD2B6F12553A5CE0071D814 /* ClientManagerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientManagerWrapper.swift; sourceTree = "<group>"; };
-		AAD2B6F32553A5CE0071D814 /* ClientMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientMap.swift; sourceTree = "<group>"; };
-		AAD2B6F42553A5CE0071D814 /* ClientAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientAnnotation.swift; sourceTree = "<group>"; };
-		AAD2B6F52553A5CE0071D814 /* ClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientManager.swift; sourceTree = "<group>"; };
+		AAD2B6ED2553A5CE0071D814 /* AgentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentCell.swift; sourceTree = "<group>"; };
+		AAD2B6EE2553A5CE0071D814 /* AgentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentList.swift; sourceTree = "<group>"; };
+		AAD2B6F02553A5CE0071D814 /* AgentScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentScanner.swift; sourceTree = "<group>"; };
+		AAD2B6F32553A5CE0071D814 /* AgentMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentMap.swift; sourceTree = "<group>"; };
+		AAD2B6F42553A5CE0071D814 /* AgentAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentAnnotation.swift; sourceTree = "<group>"; };
+		AAD2B6F52553A5CE0071D814 /* AgentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentManager.swift; sourceTree = "<group>"; };
 		AAD2B6F72553A5CE0071D814 /* MacroResultHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacroResultHeader.swift; sourceTree = "<group>"; };
 		AAD2B6F82553A5CE0071D814 /* MacroResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacroResultCell.swift; sourceTree = "<group>"; };
 		AAD2B6F92553A5CE0071D814 /* MacroResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacroResults.swift; sourceTree = "<group>"; };
@@ -500,15 +498,15 @@
 		AAD2B6D02553A5CE0071D814 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				AAD2B6D12553A5CE0071D814 /* ResponseHandler.swift */,
+				AAD2B6D52553A5CE0071D814 /* ClientHandler.swift */,
+				AAD2B6D72553A5CE0071D814 /* CvidRequestHandler.swift */,
 				AAD2B6D22553A5CE0071D814 /* ManagementHandler.swift */,
+				AAD2B6D12553A5CE0071D814 /* ResponseHandler.swift */,
 				AAD2B6D32553A5CE0071D814 /* SandpolisConnection.swift */,
 				AAD2B6D42553A5CE0071D814 /* SandpolisConnection+DesktopPlugin.swift */,
-				AAD2B6D52553A5CE0071D814 /* ClientHandler.swift */,
-				AAD2B6D62553A5CE0071D814 /* SandpolisStream.swift */,
-				AAD2B6D72553A5CE0071D814 /* CvidRequestHandler.swift */,
 				AAD2B6D82553A5CE0071D814 /* SandpolisConnection+FilesystemPlugin.swift */,
 				AAD2B6D92553A5CE0071D814 /* SandpolisConnection+ShellPlugin.swift */,
+				AAD2B6D62553A5CE0071D814 /* SandpolisStream.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -516,22 +514,22 @@
 		AAD2B6DA2553A5CE0071D814 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AEBA95372634A79E00CDD9EC /* Settings */,
-				AAD2B6DB2553A5CE0071D814 /* ControlPanel */,
-				AAD2B6E52553A5CE0071D814 /* GroupPanel */,
-				AAD2B6EB2553A5CE0071D814 /* AgentManager */,
-				AAD2B6F62553A5CE0071D814 /* MacroResults */,
-				AAD2B6FC2553A5CE0071D814 /* MacroManager */,
-				AAD2B7002553A5CE0071D814 /* MacroSelect */,
-				AAD2B7032553A5CE0071D814 /* ServerManager */,
-				AAD2B7072553A5CE0071D814 /* UIViewController+Login.swift */,
-				AAD2B7082553A5CE0071D814 /* Terminal */,
 				AAD2B70F2553A5CE0071D814 /* About */,
+				AAD2B6EB2553A5CE0071D814 /* AgentManager */,
 				AAD2B7132553A5CE0071D814 /* CloudPricing */,
+				AAD2B6DB2553A5CE0071D814 /* ControlPanel */,
 				AAD2B7152553A5CE0071D814 /* FileManager */,
-				AAD2B71A2553A5CE0071D814 /* ServerCreator */,
-				AAD2B7202553A5CE0071D814 /* UITextField+Icon.swift */,
+				AAD2B6E52553A5CE0071D814 /* GroupPanel */,
 				AAD2B7212553A5CE0071D814 /* Login */,
+				AAD2B6FC2553A5CE0071D814 /* MacroManager */,
+				AAD2B6F62553A5CE0071D814 /* MacroResults */,
+				AAD2B7002553A5CE0071D814 /* MacroSelect */,
+				AAD2B71A2553A5CE0071D814 /* ServerCreator */,
+				AAD2B7032553A5CE0071D814 /* ServerManager */,
+				AEBA95372634A79E00CDD9EC /* Settings */,
+				AAD2B7082553A5CE0071D814 /* Terminal */,
+				AAD2B7202553A5CE0071D814 /* UITextField+Icon.swift */,
+				AAD2B7072553A5CE0071D814 /* UIViewController+Login.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -567,9 +565,8 @@
 			children = (
 				AAD2B6EC2553A5CE0071D814 /* AgentList */,
 				AAD2B6EF2553A5CE0071D814 /* AgentScanner */,
-				AAD2B6F12553A5CE0071D814 /* ClientManagerWrapper.swift */,
 				AAD2B6F22553A5CE0071D814 /* AgentMap */,
-				AAD2B6F52553A5CE0071D814 /* ClientManager.swift */,
+				AAD2B6F52553A5CE0071D814 /* AgentManager.swift */,
 			);
 			path = AgentManager;
 			sourceTree = "<group>";
@@ -577,8 +574,8 @@
 		AAD2B6EC2553A5CE0071D814 /* AgentList */ = {
 			isa = PBXGroup;
 			children = (
-				AAD2B6ED2553A5CE0071D814 /* ClientCell.swift */,
-				AAD2B6EE2553A5CE0071D814 /* ClientList.swift */,
+				AAD2B6ED2553A5CE0071D814 /* AgentCell.swift */,
+				AAD2B6EE2553A5CE0071D814 /* AgentList.swift */,
 			);
 			path = AgentList;
 			sourceTree = "<group>";
@@ -586,7 +583,7 @@
 		AAD2B6EF2553A5CE0071D814 /* AgentScanner */ = {
 			isa = PBXGroup;
 			children = (
-				AAD2B6F02553A5CE0071D814 /* ClientScanner.swift */,
+				AAD2B6F02553A5CE0071D814 /* AgentScanner.swift */,
 			);
 			path = AgentScanner;
 			sourceTree = "<group>";
@@ -594,8 +591,8 @@
 		AAD2B6F22553A5CE0071D814 /* AgentMap */ = {
 			isa = PBXGroup;
 			children = (
-				AAD2B6F32553A5CE0071D814 /* ClientMap.swift */,
-				AAD2B6F42553A5CE0071D814 /* ClientAnnotation.swift */,
+				AAD2B6F32553A5CE0071D814 /* AgentMap.swift */,
+				AAD2B6F42553A5CE0071D814 /* AgentAnnotation.swift */,
 			);
 			path = AgentMap;
 			sourceTree = "<group>";
@@ -714,11 +711,11 @@
 		AAD2B7282553A5CF0071D814 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AA79B3EA255619FA007E8A6B /* Oid.swift */,
+				AAD2B72C2553A5CF0071D814 /* SandpolisProfile.swift */,
 				AAD2B7292553A5CF0071D814 /* SandpolisServer.swift */,
 				AAD2B72A2553A5CF0071D814 /* STAttribute.swift */,
 				AAD2B72B2553A5CF0071D814 /* STDocument.swift */,
-				AAD2B72C2553A5CF0071D814 /* SandpolisProfile.swift */,
-				AA79B3EA255619FA007E8A6B /* Oid.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -726,9 +723,9 @@
 		AAD2B72D2553A5CF0071D814 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				AAD2B72E2553A5CF0071D814 /* SandpolisUtil.swift */,
 				AAD2B72F2553A5CF0071D814 /* CloudUtil.swift */,
 				AAD2B7302553A5CF0071D814 /* FormatUtil.swift */,
+				AAD2B72E2553A5CF0071D814 /* SandpolisUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -928,7 +925,6 @@
 				AAD2B73F2553A5CF0071D814 /* RemoteDesktop.swift in Sources */,
 				AA79B3B22554E68C007E8A6B /* msg_server.pb.swift in Sources */,
 				AAD2B73A2553A5CF0071D814 /* SandpolisConnection+ShellPlugin.swift in Sources */,
-				AAD2B74B2553A5CF0071D814 /* ClientManagerWrapper.swift in Sources */,
 				AA0BA56C2554E04A0042A3A3 /* group.pb.swift in Sources */,
 				AAD2B76C2553A5CF0071D814 /* Step1.swift in Sources */,
 				AA79B3C42554E6C3007E8A6B /* msg_shell.pb.swift in Sources */,
@@ -945,7 +941,7 @@
 				AAD2B7732553A5CF0071D814 /* BackgroundView.swift in Sources */,
 				AA79B3B42554E68C007E8A6B /* msg_login.pb.swift in Sources */,
 				AAD2B7682553A5CF0071D814 /* FolderUpCell.swift in Sources */,
-				AAD2B74A2553A5CF0071D814 /* ClientScanner.swift in Sources */,
+				AAD2B74A2553A5CF0071D814 /* AgentScanner.swift in Sources */,
 				AA79B3CB2554E6ED007E8A6B /* msg_device.pb.swift in Sources */,
 				AA0BA56A2554E04A0042A3A3 /* plugin.pb.swift in Sources */,
 				AAD2B7362553A5CF0071D814 /* ClientHandler.swift in Sources */,
@@ -962,7 +958,7 @@
 				AA0BA5782554E0AF0042A3A3 /* msg_state.pb.swift in Sources */,
 				AAD2B7632553A5CF0071D814 /* About.swift in Sources */,
 				AAD2B7392553A5CF0071D814 /* SandpolisConnection+FilesystemPlugin.swift in Sources */,
-				AAD2B74D2553A5CF0071D814 /* ClientAnnotation.swift in Sources */,
+				AAD2B74D2553A5CF0071D814 /* AgentAnnotation.swift in Sources */,
 				AAD2B76A2553A5CF0071D814 /* Step2.swift in Sources */,
 				AAD2B7652553A5CF0071D814 /* CloudPricing.swift in Sources */,
 				AAD2B7612553A5CF0071D814 /* Ubuntu.swift in Sources */,
@@ -975,11 +971,11 @@
 				AA79B3AF2554E68C007E8A6B /* msg_listener.pb.swift in Sources */,
 				AAD2B7642553A5CF0071D814 /* VersionCell.swift in Sources */,
 				AAD2B73C2553A5CF0071D814 /* InfoCell.swift in Sources */,
-				AAD2B7482553A5CF0071D814 /* ClientCell.swift in Sources */,
+				AAD2B7482553A5CF0071D814 /* AgentCell.swift in Sources */,
 				AAD2B7502553A5CF0071D814 /* MacroResultCell.swift in Sources */,
 				AAD2B76B2553A5CF0071D814 /* Step4.swift in Sources */,
-				AAD2B74E2553A5CF0071D814 /* ClientManager.swift in Sources */,
-				AAD2B7492553A5CF0071D814 /* ClientList.swift in Sources */,
+				AAD2B74E2553A5CF0071D814 /* AgentManager.swift in Sources */,
+				AAD2B7492553A5CF0071D814 /* AgentList.swift in Sources */,
 				AAD2B7522553A5CF0071D814 /* MacroResult.swift in Sources */,
 				AAD2B7512553A5CF0071D814 /* MacroResults.swift in Sources */,
 				AAD2B75F2553A5CF0071D814 /* TerminalView.swift in Sources */,
@@ -997,7 +993,7 @@
 				AA0BA54D2554DFDA0042A3A3 /* result.pb.swift in Sources */,
 				AA79B3EB255619FA007E8A6B /* Oid.swift in Sources */,
 				AAD2B76E2553A5CF0071D814 /* ServerCreator.swift in Sources */,
-				AAD2B74C2553A5CF0071D814 /* ClientMap.swift in Sources */,
+				AAD2B74C2553A5CF0071D814 /* AgentMap.swift in Sources */,
 				AAD2B7762553A5CF0071D814 /* SandpolisServer.swift in Sources */,
 				AA0BA57B2554E0AF0042A3A3 /* msg_cvid.pb.swift in Sources */,
 				AAD2B75A2553A5CF0071D814 /* ServerCell.swift in Sources */,

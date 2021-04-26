@@ -10,7 +10,7 @@
 import AVFoundation
 import UIKit
 
-class ClientScanner: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class AgentScanner: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
 	@IBOutlet weak var progress: UIActivityIndicatorView!
 

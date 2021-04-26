@@ -76,7 +76,6 @@
                     <navigationItem key="navigationItem" id="pBX-Y7-wYo"/>
                     <connections>
                         <segue destination="8BF-ZE-cQt" kind="show" identifier="LoginCompleteSegue" id="vFP-pK-w2I"/>
-                        <segue destination="Jkw-iU-X4w" kind="show" identifier="DirectLoginCompleteSegue" id="mM5-gX-d0n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -287,7 +286,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="185"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="qms-wD-7pc">
-                                        <rect key="frame" x="0.0" y="728" width="414" height="72"/>
+                                        <rect key="frame" x="0.0" y="679" width="414" height="72"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="od2-Kn-BUV">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
@@ -317,7 +316,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huv-gN-aoS">
-                                <rect key="frame" x="0.0" y="200" width="414" height="528"/>
+                                <rect key="frame" x="0.0" y="200" width="414" height="479"/>
                                 <connections>
                                     <segue destination="7w9-u1-h78" kind="embed" id="Gu1-gy-RfD"/>
                                 </connections>
@@ -336,18 +335,19 @@
                             <constraint firstItem="huv-gN-aoS" firstAttribute="top" secondItem="xz1-X9-o9c" secondAttribute="top" constant="200" id="uwi-G4-7nk"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="About" id="JKg-h9-9wZ"/>
                     <navigationItem key="navigationItem" id="A8G-pn-0fK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0F-1D-fdu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2518.840579710145" y="-1394.1964285714284"/>
+            <point key="canvasLocation" x="1016" y="860"/>
         </scene>
         <!--Version Table-->
         <scene sceneID="kGc-ee-k3L">
             <objects>
                 <tableViewController id="7w9-u1-h78" customClass="VersionTable" customModule="SandpolisClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="x0x-PB-ZDn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="528"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="479"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -393,7 +393,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1O-JX-gRL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3274" y="-1612"/>
+            <point key="canvasLocation" x="1771" y="642"/>
         </scene>
         <!--Server Creator-->
         <scene sceneID="5mS-9m-wyh">
@@ -980,7 +980,7 @@
         <!--Host Map-->
         <scene sceneID="vGu-jn-ctS">
             <objects>
-                <viewController title="Host Map" id="UyJ-Lr-hxt" customClass="ClientMap" customModule="SandpolisClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Host Map" id="UyJ-Lr-hxt" customClass="AgentMap" customModule="SandpolisClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AhP-hW-cBX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1778,7 +1778,7 @@
         <!--Host List-->
         <scene sceneID="4SU-f1-Edx">
             <objects>
-                <tableViewController title="Host List" definesPresentationContext="YES" hidesBottomBarWhenPushed="YES" id="Zr7-Yd-1dv" customClass="ClientList" customModule="SandpolisClient" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Host List" definesPresentationContext="YES" hidesBottomBarWhenPushed="YES" id="Zr7-Yd-1dv" customClass="AgentList" customModule="SandpolisClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="40" estimatedSectionHeaderHeight="-1" sectionFooterHeight="40" estimatedSectionFooterHeight="-1" id="fU6-dp-HAA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1811,7 +1811,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HostCell" rowHeight="80" id="eyh-Hm-sOL" customClass="ClientCell" customModule="SandpolisClient" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HostCell" rowHeight="80" id="eyh-Hm-sOL" customClass="AgentCell" customModule="SandpolisClient" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eyh-Hm-sOL" id="b3Q-mt-JvS">
@@ -1870,10 +1870,10 @@
             </objects>
             <point key="canvasLocation" x="6746.376811594203" y="70.982142857142847"/>
         </scene>
-        <!--Client Scanner-->
+        <!--Agent Scanner-->
         <scene sceneID="flc-LV-9YF">
             <objects>
-                <viewController id="654-4d-6yS" customClass="ClientScanner" customModule="SandpolisClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="654-4d-6yS" customClass="AgentScanner" customModule="SandpolisClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bdk-rL-u6q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1987,26 +1987,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Host View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kge-M1-MZo">
-                                                    <rect key="frame" x="20" y="16" width="137" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resolve Server Locations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kge-M1-MZo">
+                                                    <rect key="frame" x="20" y="16" width="191.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lOE-1e-8et">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="lOE-1e-8et">
                                                     <rect key="frame" x="307" y="12.5" width="91" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="91" id="XLx-ZY-MzV"/>
                                                     </constraints>
                                                     <segments>
-                                                        <segment title="List"/>
-                                                        <segment title="Map"/>
+                                                        <segment title="Yes"/>
+                                                        <segment title="No"/>
                                                     </segments>
                                                     <connections>
                                                         <action selector="hostViewChanged:" destination="2A8-D6-bel" eventType="valueChanged" id="zpf-d1-5Sq"/>
                                                     </connections>
                                                 </segmentedControl>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change the view that is shown first" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaD-Ll-cW4">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use a public service to resolve server IP addresses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaD-Ll-cW4">
                                                     <rect key="frame" x="20" y="48.5" width="374" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -2129,9 +2129,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="I0L-ag-O66" secondAttribute="trailing" constant="20" id="uQC-gW-woT"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Qws-g6-cAf" kind="modal" id="TDs-5l-wmP"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -2182,33 +2179,17 @@
                     <connections>
                         <segue destination="alQ-wz-wAn" kind="relationship" relationship="viewControllers" id="bHt-Is-v4h"/>
                         <segue destination="4iV-XP-Lbw" kind="relationship" relationship="viewControllers" id="CcW-6d-itW"/>
+                        <segue destination="Qws-g6-cAf" kind="relationship" relationship="viewControllers" id="6iZ-YX-Bkz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1e2-lC-MnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2563.768115942029" y="70.982142857142847"/>
         </scene>
-        <!--Client Manager Wrapper-->
-        <scene sceneID="iza-VM-Pwx">
-            <objects>
-                <navigationController modalPresentationStyle="fullScreen" id="Jkw-iU-X4w" customClass="ClientManagerWrapper" customModule="SandpolisClient" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="eKX-af-CCD"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UED-Cg-36l">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="z06-cS-ZjJ" kind="relationship" relationship="rootViewController" id="Tmd-11-lDG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1BJ-wG-XY0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5080" y="552"/>
-        </scene>
-        <!--Client Manager-->
+        <!--Agent Manager-->
         <scene sceneID="d4I-lf-oL7">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="z06-cS-ZjJ" customClass="ClientManager" customModule="SandpolisClient" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="z06-cS-ZjJ" customClass="AgentManager" customModule="SandpolisClient" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="BCh-Lh-kfD"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eH6-gU-4Mo">
@@ -2802,7 +2783,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tfV-TI-V1H"/>
         <segue reference="Tgm-TF-M4i"/>
         <segue reference="p4H-z2-yLu"/>
         <segue reference="Ak8-SG-WPy"/>

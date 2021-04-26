@@ -20,7 +20,7 @@ class OverviewTable: UITableViewController {
 		("Processes", [Attribute("/process/count", "Number of Processes")])
 	]*/
 
-	var info: [(String, [Oid<Any>])] = [
+	var info: [(String, [Oid])] = [
 	//    ("System", [InstanceOid.osType, InstanceOid.hostname]),
 //        ("Location", [InstanceOid.ipLocationCountry])
 	]

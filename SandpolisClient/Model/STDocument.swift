@@ -8,24 +8,61 @@
 //                                                                            //
 //============================================================================//
 import Foundation
+import os
 
 class STDocument {
+    
+    /// The document OID
+    let oid: Oid
 
-	private var attributes = [String: STAttribute<Any>]()
+	private var attributes = [String: STAttribute]()
 
 	private var documents = [String: STDocument]()
 
 	func document(_ id: String) -> STDocument {
 		if documents[id] == nil {
-			documents[id] = STDocument()
+			documents[id] = STDocument(self, id)
 		}
 		return documents[id]!
 	}
 
-	func attribute(_ path: String) -> STAttribute<Any> {
-		if attributes[path] == nil {
-		//	attributes[path] = STAttribute()
+	func attribute(_ id: String) -> STAttribute {
+		if attributes[id] == nil {
+            attributes[id] = STAttribute(self, id)
 		}
-		return attributes[path]!
+		return attributes[id]!
 	}
+    
+    func attribute(_ oid: Oid) -> STAttribute {
+        
+        if(oid.path.count - self.oid.path.count == 1) {
+            return attribute(oid.path.last!)
+        }
+
+        var document = self
+        for i in self.oid.path.count...(oid.path.count - 1) {
+            document = document.document(oid.path[i])
+        }
+
+        return document.attribute(oid.path.last!)
+    }
+
+    init(_ parent: STDocument?, _ id: String) {
+        if let parent = parent {
+            self.oid = parent.oid.child(id)
+        } else {
+            self.oid = Oid(id)!
+        }
+    }
+    
+    func merge(_ snapshot: Core_Instance_ProtoSTObjectUpdate) {
+        for (path, change) in snapshot.changed {
+            os_log("Merging oid: %s", path)
+            if let oid = Oid(path) {
+                attribute(oid).merge(Core_Instance_ProtoSTObjectUpdate.with {
+                    $0.changed[path] = change
+                })
+            }
+        }
+    }
 }

@@ -74,7 +74,8 @@ class ServerManager: UITableViewController {
 				login(address: server.address, username: server.username, password: server.getPassword()!) { connection in
 					if let connection = connection {
 						SandpolisUtil.connection = connection
-						//connection.openProfileStream()
+						_ = connection.sync("/profile")
+
 						DispatchQueue.main.async {
 							self.performSegue(withIdentifier: "ShowHostSegue", sender: server)
 						}
@@ -122,9 +123,9 @@ class ServerManager: UITableViewController {
 				dest.server = servers[index.row]
 			}
 		} else if segue.identifier == "ShowHostSegue",
-			let dest = segue.destination as? ClientManager {
+			let dest = segue.destination as? AgentManager {
 			if let server = sender as? SandpolisServer {
-				dest.loginType = .cloud(server)
+				dest.server = server
 			}
 		} else {
 			fatalError("Unexpected segue: \(segue.identifier ?? "unknown")")

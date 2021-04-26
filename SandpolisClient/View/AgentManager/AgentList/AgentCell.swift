@@ -9,14 +9,17 @@
 //============================================================================//
 import UIKit
 
-/// A wrapper for direct connections
-class ClientManagerWrapper: UINavigationController {
+class AgentCell: UITableViewCell {
 
-	var name: String!
+	@IBOutlet weak var platform: UIImageView!
+	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak var addressLabel: UILabel!
 
-	override func viewDidLoad() {
-		if let dest = self.children.first as? ClientManager {
-			dest.loginType = .direct(name)
-		}
+	func setContent(_ profile: SandpolisProfile) {
+		nameLabel.text = profile.hostname.value as? String
+		addressLabel.text = profile.ipAddress.value as? String
+
+		// Set platform information
+		platform.image = profile.platformIcon
 	}
 }

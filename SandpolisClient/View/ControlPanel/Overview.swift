@@ -27,7 +27,7 @@ class Overview: UIViewController {
 		super.viewDidLoad()
 
 		// Set screenshot if it already exists
-		if let data = profile.screenshot.value, let image = UIImage(data: data) {
+		if let data = profile.screenshot.value as? Data, let image = UIImage(data: data) {
 			screenshotHeight.constant = min(screenshot.bounds.width, (image.size.height / image.size.width) * screenshot.bounds.width)
 			screenshot.image = image
 		} else {
@@ -36,16 +36,16 @@ class Overview: UIViewController {
 		}
 
 		// Set location
-		if let code = profile.ipLocationCountryCode.value {
+		if let code = profile.ipLocationCountryCode.value as? String {
 			flag.image = UIImage(named: "flag/\(code.lowercased())")
-			location.text = FormatUtil.formatProfileLocation(city: profile.ipLocationCity.value, region: profile.ipLocationRegion.value, country: profile.ipLocationCountry.value)
+			location.text = FormatUtil.formatProfileLocation(city: profile.ipLocationCity.value as? String, region: profile.ipLocationRegion.value as? String, country: profile.ipLocationCountry.value as? String)
 		} else {
 			flag.isHidden = true
-			location.text = profile.ipAddress.value
+			location.text = profile.ipAddress.value as? String
 		}
 
 		// Set hostname
-		if let host = profile.hostname.value {
+		if let host = profile.hostname.value as? String {
 			hostname.text = host
 		} else {
 			hostname.text = profile.uuid
@@ -53,7 +53,7 @@ class Overview: UIViewController {
 
 		// Set platform information
 		platformLogo.image = profile.platformIcon
-		switch profile.osFamily.value {
+		switch profile.osFamily.value as? Core_Foundation_OsType {
 		case .linux:
 			platform.text = "Linux"
 		case .darwin:
@@ -95,7 +95,7 @@ class Overview: UIViewController {
 				self.profile.screenshot.value = rs.data
 				DispatchQueue.main.async {
 					self.screenshotProgress.stopAnimating()
-					if let image = UIImage(data: self.profile.screenshot.value!) {
+					if let image = UIImage(data: self.profile.screenshot.value as! Data) {
 						self.screenshotHeight.constant = min(self.screenshot.bounds.width, (image.size.height / image.size.width) * self.screenshot.bounds.width)
 						self.screenshot.image = image
 					}

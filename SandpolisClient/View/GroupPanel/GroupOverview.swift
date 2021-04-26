@@ -12,7 +12,7 @@ import UIKit
 class GroupOverview: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	@IBOutlet weak var table: UITableView!
-	var hostList: ClientList!
+	var hostList: AgentList!
 	var profiles = [SandpolisProfile]()
 
 	override func viewDidLoad() {

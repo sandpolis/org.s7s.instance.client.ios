@@ -15,7 +15,7 @@ class GroupHostCell: UITableViewCell {
 	@IBOutlet weak var hostname: UILabel!
 
 	func setContent(_ profile: SandpolisProfile) {
-		hostname.text = profile.hostname.value
+		hostname.text = profile.hostname.value as? String
 		platform.image = profile.platformIcon
 	}
 }

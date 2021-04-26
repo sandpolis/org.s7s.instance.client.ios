@@ -10,7 +10,7 @@
 import UIKit
 import SwiftEventBus
 
-class ClientList: UITableViewController {
+class AgentList: UITableViewController {
 
 	@IBOutlet weak var footerView: UIView!
 
@@ -49,7 +49,7 @@ class ClientList: UITableViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "HostCell", for: indexPath) as! ClientCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: "HostCell", for: indexPath) as! AgentCell
 		cell.setContent(connection.profiles[indexPath.row])
 		if selectionMode {
 			if selection.contains(indexPath) {

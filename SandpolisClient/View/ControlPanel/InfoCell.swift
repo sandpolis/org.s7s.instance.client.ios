@@ -15,8 +15,8 @@ class InfoCell: UITableViewCell {
 	@IBOutlet weak var value: UILabel!
 	@IBOutlet weak var progress: UIActivityIndicatorView!
 
-	public func setAttribute(_ attribute: STAttribute<Any>) {
-		title.text = attribute.oid.path
+	public func setAttribute(_ attribute: STAttribute) {
+		title.text = ""
 		if let value = attribute.value {
 			self.value.text = value as? String
 			self.value.isHidden = false

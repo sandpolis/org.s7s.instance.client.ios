@@ -44,8 +44,10 @@ public class SandpolisConnection {
 	/// A list of active streams
 	var streams = [SandpolisStream]()
 
-	/// A list of client profiles
+	/// A list of agent profiles
 	var profiles = [SandpolisProfile]()
+
+    let root = STDocument(nil, "/")
 
 	/// A promise that's notified when the connection completes
 	let connectionPromise: EventLoopPromise<Void>
@@ -175,12 +177,10 @@ public class SandpolisConnection {
 	/// Request an ST snapshot.
 	///
 	/// - Parameters:
-	///   - target: The target profile
-	///   - attribute: The target OID
+	///   - oid: The target OID
 	/// - Returns: A response future
-	/*func snapshot_collection(_ target: SandpolisProfile, _ oid: String) -> EventLoopFuture<Core_Instance_ProtoDocument> {
+	func snapshot(_ oid: String) -> EventLoopFuture<Core_Instance_ProtoSTObjectUpdate> {
 		var rq = Core_Net_MSG.with {
-			$0.to = target.cvid
 			$0.payload = try! Core_Net_Msg_RQ_STSnapshot.with {
 				$0.oid = oid
 			}.serializedData()
@@ -189,10 +189,44 @@ public class SandpolisConnection {
 		os_log("Requesting snapshot: %s", oid)
 		return request(&rq).map { rs in
 			do {
-				return try Core_Instance_ProtoDocument.init(serializedData: rs.payload)
+				return try Core_Instance_ProtoSTObjectUpdate.init(serializedData: rs.payload)
 			} catch {
-				return Core_Instance_ProtoDocument.init()
+				return Core_Instance_ProtoSTObjectUpdate.init()
 			}
 		}
-	}*/
+	}
+    
+    func newStream() -> SandpolisStream {
+        let stream = SandpolisStream(self, Int32.random(in: 0...1))
+        streams.append(stream)
+        return stream
+    }
+
+    /// Synchronize ST.
+    ///
+    /// - Parameters:
+    ///   - oid: The target OID
+    /// - Returns: A response future
+    func sync(_ oid: String) -> EventLoopFuture<Core_Net_MSG> {
+        let stream = newStream()
+        stream.register { msg in
+            do {
+                self.root.merge(try Core_Instance_ProtoSTObjectUpdate.init(serializedData: msg.payload))
+            } catch {
+                os_log("Failed to decode update")
+            }
+        }
+
+        var rq = Core_Net_MSG.with {
+            $0.payloadType = -391282415
+            $0.payload = try! Core_Net_Msg_RQ_STSync.with {
+                $0.oid = oid
+                $0.streamID = stream.id
+                $0.direction = .downstream
+            }.serializedData()
+        }
+
+        os_log("Requesting sync: %s", oid)
+        return request(&rq)
+    }
 }

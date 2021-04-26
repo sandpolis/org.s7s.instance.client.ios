@@ -7,19 +7,23 @@
 //  as published by the Mozilla Foundation.                                   //
 //                                                                            //
 //============================================================================//
-import UIKit
+import MapKit
 
-class ClientCell: UITableViewCell {
+class AgentAnnotation: NSObject, MKAnnotation {
 
-	@IBOutlet weak var platform: UIImageView!
-	@IBOutlet weak var nameLabel: UILabel!
-	@IBOutlet weak var addressLabel: UILabel!
+	var coordinate: CLLocationCoordinate2D
+	var title: String?
 
-	func setContent(_ profile: SandpolisProfile) {
-		nameLabel.text = profile.hostname.value
-		addressLabel.text = profile.ipAddress.value
+	let profile: SandpolisProfile
 
-		// Set platform information
-		platform.image = profile.platformIcon
+	init?(_ profile: SandpolisProfile) {
+
+		self.profile = profile
+		self.title = profile.hostname.value as? String
+		if let latitude = profile.ipLocationLatitude.value as? Float32, let longitude = profile.ipLocationLongitude.value as? Float32 {
+			self.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(latitude), CLLocationDegrees(longitude))
+		} else {
+			return nil
+		}
 	}
 }

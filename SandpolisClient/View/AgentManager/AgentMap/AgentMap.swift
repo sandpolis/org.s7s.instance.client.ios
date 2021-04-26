@@ -12,7 +12,7 @@ import MapKit
 import CoreLocation
 import SwiftEventBus
 
-class ClientMap: UIViewController, MKMapViewDelegate {
+class AgentMap: UIViewController, MKMapViewDelegate {
 
 	@IBOutlet weak var map: MKMapView!
 
@@ -30,14 +30,14 @@ class ClientMap: UIViewController, MKMapViewDelegate {
 		}
 
 		for host in SandpolisUtil.connection.profiles {
-			if let pin = ClientAnnotation(host) {
+			if let pin = AgentAnnotation(host) {
 				map.addAnnotation(pin)
 			}
 		}
 
 		SwiftEventBus.unregister(self)
 		SwiftEventBus.onMainThread(self, name: "profileOnlineEvent") { result in
-			if let profile = result?.object as? SandpolisProfile, self.findHost(profile) == nil, let annotation = ClientAnnotation(profile) {
+			if let profile = result?.object as? SandpolisProfile, self.findHost(profile) == nil, let annotation = AgentAnnotation(profile) {
 				self.map.addAnnotation(annotation)
 			}
 		}
@@ -72,7 +72,7 @@ class ClientMap: UIViewController, MKMapViewDelegate {
 	}
 
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-		guard let annotation = annotation as? ClientAnnotation else { return nil }
+		guard let annotation = annotation as? AgentAnnotation else { return nil }
 		var annotationView = MKMarkerAnnotationView()
 		if let dequedView = mapView.dequeueReusableAnnotationView(withIdentifier: "ClientAnnotation") as? MKMarkerAnnotationView {
 			annotationView = dequedView
@@ -92,10 +92,10 @@ class ClientMap: UIViewController, MKMapViewDelegate {
 			let alert = UIAlertController(title: "\(annotation.memberAnnotations.count) hosts selected", message: nil, preferredStyle: .actionSheet)
 			alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
 			alert.addAction(UIAlertAction(title: "Control Panel", style: .default) { _ in
-				self.performSegue(withIdentifier: "ShowGroupControlPanelSegue", sender: annotation.memberAnnotations.map({($0 as! ClientAnnotation).profile}))
+				self.performSegue(withIdentifier: "ShowGroupControlPanelSegue", sender: annotation.memberAnnotations.map({($0 as! AgentAnnotation).profile}))
 			})
 			present(alert, animated: true)
-		} else if let annotation = view.annotation as? ClientAnnotation {
+		} else if let annotation = view.annotation as? AgentAnnotation {
 			let alert = UIAlertController(title: annotation.title!, message: nil, preferredStyle: .actionSheet)
 			alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
 			alert.addAction(UIAlertAction(title: "Control Panel", style: .default) { _ in
@@ -118,7 +118,7 @@ class ClientMap: UIViewController, MKMapViewDelegate {
 
 	private func findHost(_ profile: SandpolisProfile) -> MKAnnotation? {
 		return map.annotations.filter { annotation in
-			if let annotation = annotation as? ClientAnnotation {
+			if let annotation = annotation as? AgentAnnotation {
 				return annotation.profile.cvid == profile.cvid
 			} else {
 				return false

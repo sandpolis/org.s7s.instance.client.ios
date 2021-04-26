@@ -14,44 +14,23 @@ import os
 /// Contains agent metadata
 class SandpolisProfile {
 
-	lazy var hostname = STAttribute<String>(InstanceOid.hostname.resolve(uuid))
-	lazy var osFamily = STAttribute<Core_Foundation_OsType>(InstanceOid.osType.resolve(uuid))
-	lazy var online = STAttribute<Bool>(InstanceOid.online.resolve(uuid))
-	lazy var ipAddress = STAttribute<String>(InstanceOid.ipAddress.resolve(uuid))
-	lazy var ipLocationCity = STAttribute<String>(InstanceOid.ipLocationCity.resolve(uuid))
-	lazy var ipLocationContinent = STAttribute<String>(InstanceOid.ipLocationContinent.resolve(uuid))
-	lazy var ipLocationCountry = STAttribute<String>(InstanceOid.ipLocationCountry.resolve(uuid))
-	lazy var ipLocationCountryCode = STAttribute<String>(InstanceOid.ipLocationCountryCode.resolve(uuid))
-	lazy var ipLocationCurrency = STAttribute<String>(InstanceOid.ipLocationCurrency.resolve(uuid))
-	lazy var ipLocationDistrict = STAttribute<String>(InstanceOid.ipLocationDistrict.resolve(uuid))
-	lazy var ipLocationIsp = STAttribute<String>(InstanceOid.ipLocationIsp.resolve(uuid))
-	lazy var ipLocationLatitude = STAttribute<Float32>(InstanceOid.ipLocationLatitude.resolve(uuid))
-	lazy var ipLocationLongitude = STAttribute<Float32>(InstanceOid.ipLocationLongitude.resolve(uuid))
-	lazy var ipLocationRegion = STAttribute<String>(InstanceOid.ipLocationRegion.resolve(uuid))
-	lazy var instanceType = STAttribute<Core_Instance_InstanceType>(InstanceOid.instanceType.resolve(uuid))
-	lazy var instanceFlavor = STAttribute<Core_Instance_InstanceFlavor>(InstanceOid.instanceFlavor.resolve(uuid))
-	lazy var screenshot = STAttribute<Data>(InstanceOid.screenshot.resolve(uuid))
-
-	/*func merge(snapshot: Core_Instance_ProtoDocument) {
-		merge(oid: "", snapshot: snapshot)
-	}
-
-	private func merge(oid: String, snapshot: Core_Instance_ProtoDocument) {
-		for attribute in snapshot.attribute {
-			switch "\(oid)" {
-			case hostname.oid.path:
-				hostname.value = attribute.values.first?.string.first
-			case osFamily.oid.path:
-				osFamily.value = Core_Foundation_OsType.init(rawValue: Int(attribute.values.first?.integer.first ?? 0))
-			case online.oid.path:
-				online.value = attribute.values.first?.boolean.first
-			case ipAddress.oid.path:
-				online.value = attribute.values.first?.boolean.first
-			default:
-				break
-			}
-		}
-	}*/
+	lazy var hostname = STAttribute("/profile/\(uuid)/agent/hostname")
+	lazy var osFamily = STAttribute("/profile/\(uuid)/agent/os_type")
+	lazy var online = STAttribute("/profile/\(uuid)/agent/status")
+	lazy var ipAddress = STAttribute("/profile/\(uuid)/ip_address")
+	lazy var ipLocationCity = STAttribute("/profile/\(uuid)/agent/ip_location/city")
+	lazy var ipLocationContinent = STAttribute("/profile/\(uuid)/agent/ip_location/continent")
+	lazy var ipLocationCountry = STAttribute("/profile/\(uuid)/agent/ip_location/country")
+	lazy var ipLocationCountryCode = STAttribute("/profile/\(uuid)/agent/ip_location/country_code")
+	lazy var ipLocationCurrency = STAttribute("/profile/\(uuid)/agent/ip_location/currency")
+	lazy var ipLocationDistrict = STAttribute("/profile/\(uuid)/agent/ip_location/district")
+	lazy var ipLocationIsp = STAttribute("/profile/\(uuid)/agent/ip_location/isp")
+	lazy var ipLocationLatitude = STAttribute("/profile/\(uuid)/agent/ip_location/latitude")
+	lazy var ipLocationLongitude = STAttribute("/profile/\(uuid)/agent/ip_location/longitude")
+	lazy var ipLocationRegion = STAttribute("/profile/\(uuid)/agent/ip_location/region")
+	lazy var instanceType = STAttribute("/profile/\(uuid)/instance_type")
+	lazy var instanceFlavor = STAttribute("/profile/\(uuid)/instance_flavor")
+	lazy var screenshot = STAttribute(Oid("com.sandpolis.plugin.desktop", "/profile/\(uuid)/screenshot"))
 
 	/// The client's UUID
 	let uuid: String
@@ -77,7 +56,7 @@ class SandpolisProfile {
 	}
 
 	var platformIcon: UIImage? {
-		switch osFamily.value {
+		switch osFamily.value as? Core_Foundation_OsType {
 		case .windows:
 			return UIImage(named: "platform/windows")
 		case .linux:
@@ -92,7 +71,7 @@ class SandpolisProfile {
 	}
 
 	var platformGlyph: UIImage? {
-		switch osFamily.value {
+		switch osFamily.value as? Core_Foundation_OsType {
 		case .windows:
 			return UIImage(named: "platform/windows-glyph")
 		case .linux:
