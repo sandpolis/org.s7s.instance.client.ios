@@ -8,21 +8,13 @@
 //                                                                            //
 //============================================================================//
 
+import org.gradle.internal.os.OperatingSystem
 import org.openbakery.xcode.Destination
 
 plugins {
-	id("sandpolis-module")
+	id("sandpolis-instance")
 	id("org.openbakery.xcode-plugin") version "0.20.1"
 }
-
-val protoDependencies = listOf(
-	":module:com.sandpolis.core.foundation",
-	":module:com.sandpolis.core.instance",
-	":module:com.sandpolis.core.net",
-	":module:com.sandpolis.core.clientserver",
-	":plugin:com.sandpolis.plugin.desktop",
-	":plugin:com.sandpolis.plugin.shell"
-)
 
 xcodebuild {
 	scheme = "SandpolisClient"
@@ -31,60 +23,25 @@ xcodebuild {
 	setDestination(Destination("iOS Simulator", "iPhone 12", "14.4"))
 }
 
-if (project.getParent() == null) {
-	repositories {
-		protoDependencies.map { it.split(".").takeLast(2) }.forEach {
-			maven("https://maven.pkg.github.com/sandpolis/com.sandpolis.${it.first()}.${it.last()}") {
-				credentials {
-					username = System.getenv("GITHUB_ACTOR")
-					password = System.getenv("GITHUB_TOKEN")
-				}
-			}
-		}
-	}
-
-	val proto by configurations.creating
-
-	dependencies {
-		protoDependencies.map { it.split(".").takeLast(2) }.forEach {
-			proto("com.sandpolis:${it.first()}.${it.last()}-swift:+@zip")
-		}
-	}
-
-	val assembleProto by tasks.creating(Copy::class) {
-
-		into("SandpolisClient/Gen")
-
-		proto.files.forEach { dep ->
-			var path = dep.absolutePath.split("-").takeLast(3)
-			path = path.first().split("\\.|/".toRegex()).takeLast(2)
-
-			into("com.sandpolis.${path[0]}.${path[1]}") {
-				with(copySpec {
-					from(zipTree(dep))
-				})
-			}
-		}
-	}
-
-} else {
-
-	val assembleProto by tasks.creating(Copy::class) {
-
-		into("SandpolisClient/Gen")
-
-		for (dep in protoDependencies) {
-			dependsOn("${dep}:generateProto")
-
-			into(dep.substring(dep.lastIndexOf(":") + 1)) {
-				with (copySpec {
-					from(project(dep).file("gen/main/swift"))
-				})
-			}
-		}
-	}
+dependencies {
+	proto("com.sandpolis:core.foundation:+:swift@zip")
+	proto("com.sandpolis:core.instance:+:swift@zip")
+	proto("com.sandpolis:core.net:+:swift@zip")
+	proto("com.sandpolis:core.clientserver:+:swift@zip")
+	proto("com.sandpolis:plugin.desktop:+:swift@zip")
+	proto("com.sandpolis:plugin.shell:+:swift@zip")
 }
 
+// Relocate generated sources
+(tasks.findByName("extractDownloadedProto") as? Copy)?.into("SandpolisClient/Gen")
+
 tasks.xcodebuild {
-	dependsOn(tasks.findByName("assembleProto"))
+	dependsOn("extractDownloadedProto")
+}
+
+// Disable some tasks if we're not running on macOS
+if (!OperatingSystem.current().isMacOsX()) {
+	tasks.findByName("keychainClean")?.setEnabled(false)
+	tasks.findByName("xcodebuild")?.setEnabled(false)
+	tasks.findByName("xcodebuildConfig")?.setEnabled(false)
 }
