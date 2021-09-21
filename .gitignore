@@ -1,10 +1,10 @@
-**/gen/main/cpp
-**/gen/main/java
-**/gen/main/swift
-**/src/main/resources/build.properties
+**/Gen
+**/src/gen
 *.iml
 *.ipr
 *.iws
+*.log
+*.rs.bk
 .AppleDouble
 .apt_generated
 .classpath
@@ -16,7 +16,10 @@
 .project
 .settings
 .vagrant
+__pycache__
 bin
 build
+build.json
+node_modules
+target
 xcuserdata
-SandpolisClien/Gen

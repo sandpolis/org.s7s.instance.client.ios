@@ -23,31 +23,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           submodules: recursive
-      - name: Checkout foundation dependency
-        uses: actions/checkout@v2
-        with:
-          repository: sandpolis/com.sandpolis.core.foundation
-          path: module/com.sandpolis.core.foundation
-      - name: Checkout instance dependency
-        uses: actions/checkout@v2
-        with:
-          repository: sandpolis/com.sandpolis.core.instance
-          path: module/com.sandpolis.core.instance
-      - name: Checkout net dependency
-        uses: actions/checkout@v2
-        with:
-          repository: sandpolis/com.sandpolis.core.net
-          path: module/com.sandpolis.core.net
-      - name: Checkout clientserver dependency
-        uses: actions/checkout@v2
-        with:
-          repository: sandpolis/com.sandpolis.core.clientserver
-          path: module/com.sandpolis.core.clientserver
-      - name: Checkout desktop plugin
-        uses: actions/checkout@v2
-        with:
-          repository: sandpolis/com.sandpolis.plugin.desktop
-          path: plugin/com.sandpolis.plugin.desktop
       - name: Execute build
         run: |
           gradle --no-daemon :simulatorsList :build

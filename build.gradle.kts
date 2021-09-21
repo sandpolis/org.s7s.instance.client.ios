@@ -8,6 +8,7 @@
 //                                                                            //
 //============================================================================//
 
+import org.gradle.api.file.DuplicatesStrategy
 import org.gradle.internal.os.OperatingSystem
 import org.openbakery.xcode.Destination
 
@@ -33,10 +34,20 @@ dependencies {
 }
 
 // Relocate generated sources
-(tasks.findByName("extractDownloadedProto") as? Copy)?.into("SandpolisClient/Gen")
+tasks.findByName("assembleProto")!!.doLast {
+	copy {
+		from("src/gen/swift")
+		into("SandpolisClient/Gen")
+		duplicatesStrategy = DuplicatesStrategy.INCLUDE
+	}
+}
+
+tasks.findByName("clean")?.doLast {
+	delete("SandpolisClient/Gen")
+}
 
 tasks.xcodebuild {
-	dependsOn("extractDownloadedProto")
+	dependsOn("assembleProto")
 }
 
 // Disable some tasks if we're not running on macOS
