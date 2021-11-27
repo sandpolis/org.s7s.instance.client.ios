@@ -13,16 +13,18 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 17
+
       - name: Initialize homebrew
         uses: Homebrew/actions/setup-homebrew@master
+
       - name: Install dependencies
         run: |
           brew install protobuf
           brew install swift-protobuf
+
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
+
       - name: Execute build
         run: |
           gradle --no-daemon :simulatorsList :build

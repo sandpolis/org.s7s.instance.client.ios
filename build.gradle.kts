@@ -13,7 +13,7 @@ import org.gradle.internal.os.OperatingSystem
 import org.openbakery.xcode.Destination
 
 plugins {
-	id("sandpolis-instance")
+	id("com.sandpolis.build.module")
 	id("org.openbakery.xcode-plugin") version "0.20.1"
 }
 
