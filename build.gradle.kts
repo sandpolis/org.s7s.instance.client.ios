@@ -14,6 +14,7 @@ import org.openbakery.xcode.Destination
 
 plugins {
 	id("com.sandpolis.build.module")
+	id("com.sandpolis.build.instance")
 	id("org.openbakery.xcode-plugin") version "0.20.1"
 }
 
