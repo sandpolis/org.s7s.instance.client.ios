@@ -1,10 +1,9 @@
 //============================================================================//
 //                                                                            //
-//                         Copyright © 2015 Sandpolis                         //
+//            Copyright © 2015 - 2022 Sandpolis Software Foundation           //
 //                                                                            //
 //  This source file is subject to the terms of the Mozilla Public License    //
-//  version 2. You may not use this file except in compliance with the MPL    //
-//  as published by the Mozilla Foundation.                                   //
+//  version 2. You may not use this file except in compliance with the MPLv2. //
 //                                                                            //
 //============================================================================//
 
@@ -13,8 +12,8 @@ import org.gradle.internal.os.OperatingSystem
 import org.openbakery.xcode.Destination
 
 plugins {
-	id("com.sandpolis.build.module")
-	id("com.sandpolis.build.instance")
+	id("org.s7s.build.module")
+	id("org.s7s.build.instance")
 	id("org.openbakery.xcode-plugin") version "0.20.1"
 }
 
@@ -26,12 +25,12 @@ xcodebuild {
 }
 
 dependencies {
-	proto("com.sandpolis:core.foundation:+:swift@zip")
-	proto("com.sandpolis:core.instance:+:swift@zip")
-	proto("com.sandpolis:core.net:+:swift@zip")
-	proto("com.sandpolis:core.clientserver:+:swift@zip")
-	proto("com.sandpolis:plugin.desktop:+:swift@zip")
-	proto("com.sandpolis:plugin.shell:+:swift@zip")
+	proto("org.s7s:core.foundation:+:swift@zip")
+	proto("org.s7s:core.instance:+:swift@zip")
+	proto("org.s7s:core.net:+:swift@zip")
+	proto("org.s7s:core.clientserver:+:swift@zip")
+	proto("org.s7s:plugin.desktop:+:swift@zip")
+	proto("org.s7s:plugin.shell:+:swift@zip")
 }
 
 // Relocate generated sources

@@ -1,10 +1,9 @@
 //============================================================================//
 //                                                                            //
-//                         Copyright © 2015 Sandpolis                         //
+//            Copyright © 2015 - 2022 Sandpolis Software Foundation           //
 //                                                                            //
 //  This source file is subject to the terms of the Mozilla Public License    //
-//  version 2. You may not use this file except in compliance with the MPL    //
-//  as published by the Mozilla Foundation.                                   //
+//  version 2. You may not use this file except in compliance with the MPLv2. //
 //                                                                            //
 //============================================================================//
 import UIKit
@@ -18,8 +17,8 @@ class AgentManager: UITabBarController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-        navigationItem.title = server.name
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addClient))
+		navigationItem.title = server.name
+		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addClient))
 
 		// Set default view
 		if let defaultView = UserDefaults.standard.string(forKey: "default_view") {
@@ -37,17 +36,17 @@ class AgentManager: UITabBarController {
 		SwiftEventBus.onMainThread(self, name: "connectionLostEvent") { _ in
 			SwiftEventBus.unregister(self)
 
-            self.performSegue(withIdentifier: "UnwindServerSegue", sender: self)
-            
-            let alert = UIAlertController(title: "Connection lost", message: "Your connection to the server has been lost.", preferredStyle: .alert)
-            self.present(alert, animated: true)
+			self.performSegue(withIdentifier: "UnwindServerSegue", sender: self)
+
+			let alert = UIAlertController(title: "Connection lost", message: "Your connection to the server has been lost.", preferredStyle: .alert)
+			self.present(alert, animated: true)
 		}
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "ClientScannerSegue",
 			let dest = segue.destination as? AgentScanner {
-            dest.server = server
+			dest.server = server
 		}
 	}
 

@@ -1,10 +1,9 @@
 //============================================================================//
 //                                                                            //
-//                         Copyright © 2015 Sandpolis                         //
+//            Copyright © 2015 - 2022 Sandpolis Software Foundation           //
 //                                                                            //
 //  This source file is subject to the terms of the Mozilla Public License    //
-//  version 2. You may not use this file except in compliance with the MPL    //
-//  as published by the Mozilla Foundation.                                   //
+//  version 2. You may not use this file except in compliance with the MPLv2. //
 //                                                                            //
 //============================================================================//
 import CryptoKit
@@ -47,7 +46,7 @@ public class SandpolisConnection {
 	/// A list of agent profiles
 	var profiles = [SandpolisProfile]()
 
-    let root = STDocument(nil, "/")
+	let root = STDocument(nil, "/")
 
 	/// A promise that's notified when the connection completes
 	let connectionPromise: EventLoopPromise<Void>
@@ -163,7 +162,7 @@ public class SandpolisConnection {
 	/// - Returns: A response future
 	func login(_ username: String, _ password: String) -> EventLoopFuture<Core_Net_MSG> {
 		var rq = Core_Net_MSG.with {
-            $0.payloadType = 1815052312
+			$0.payloadType = 1815052312
 			$0.payload = try! Core_Clientserver_Msg_RQ_Login.with {
 				$0.username = username
 				$0.password = SHA512.hash(data: password.data(using: .utf8)!).map { String(format: "%02hhx", $0) }.joined()
@@ -195,38 +194,38 @@ public class SandpolisConnection {
 			}
 		}
 	}
-    
-    func newStream() -> SandpolisStream {
-        let stream = SandpolisStream(self, Int32.random(in: 0...1))
-        streams.append(stream)
-        return stream
-    }
 
-    /// Synchronize ST.
-    ///
-    /// - Parameters:
-    ///   - oid: The target OID
-    /// - Returns: A response future
-    func sync(_ oid: String) -> EventLoopFuture<Core_Net_MSG> {
-        let stream = newStream()
-        stream.register { msg in
-            do {
-                self.root.merge(try Core_Instance_ProtoSTObjectUpdate.init(serializedData: msg.payload))
-            } catch {
-                os_log("Failed to decode update")
-            }
-        }
+	func newStream() -> SandpolisStream {
+		let stream = SandpolisStream(self, Int32.random(in: 0...1))
+		streams.append(stream)
+		return stream
+	}
 
-        var rq = Core_Net_MSG.with {
-            $0.payloadType = -391282415
-            $0.payload = try! Core_Net_Msg_RQ_STSync.with {
-                $0.oid = oid
-                $0.streamID = stream.id
-                $0.direction = .downstream
-            }.serializedData()
-        }
+	/// Synchronize ST.
+	///
+	/// - Parameters:
+	///   - oid: The target OID
+	/// - Returns: A response future
+	func sync(_ oid: String) -> EventLoopFuture<Core_Net_MSG> {
+		let stream = newStream()
+		stream.register { msg in
+			do {
+				self.root.merge(try Core_Instance_ProtoSTObjectUpdate.init(serializedData: msg.payload))
+			} catch {
+				os_log("Failed to decode update")
+			}
+		}
 
-        os_log("Requesting sync: %s", oid)
-        return request(&rq)
-    }
+		var rq = Core_Net_MSG.with {
+			$0.payloadType = -391282415
+			$0.payload = try! Core_Net_Msg_RQ_STSync.with {
+				$0.oid = oid
+				$0.streamID = stream.id
+				$0.direction = .downstream
+			}.serializedData()
+		}
+
+		os_log("Requesting sync: %s", oid)
+		return request(&rq)
+	}
 }

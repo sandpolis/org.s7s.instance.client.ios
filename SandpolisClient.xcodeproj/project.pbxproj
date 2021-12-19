@@ -290,17 +290,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA0BA5472554DFDA0042A3A3 /* com.sandpolis.core.foundation */ = {
+		AA0BA5472554DFDA0042A3A3 /* org.s7s.core.foundation */ = {
 			isa = PBXGroup;
 			children = (
 				AA0BA5482554DFDA0042A3A3 /* result.pb.swift */,
 				AA0BA5492554DFDA0042A3A3 /* platform.pb.swift */,
 			);
-			name = com.sandpolis.core.foundation;
-			path = ../../module/com.sandpolis.core.foundation/gen/main/swift/com/sandpolis/core/foundation;
+			name = org.s7s.core.foundation;
+			path = ../../module/org.s7s.core.foundation/gen/main/swift/com/sandpolis/core/foundation;
 			sourceTree = "<group>";
 		};
-		AA0BA5572554E04A0042A3A3 /* com.sandpolis.core.instance */ = {
+		AA0BA5572554E04A0042A3A3 /* org.s7s.core.instance */ = {
 			isa = PBXGroup;
 			children = (
 				AA0BA5582554E04A0042A3A3 /* listener.pb.swift */,
@@ -312,8 +312,8 @@
 				AA0BA5612554E04A0042A3A3 /* user.pb.swift */,
 				AA0BA5622554E04A0042A3A3 /* group.pb.swift */,
 			);
-			name = com.sandpolis.core.instance;
-			path = ../../module/com.sandpolis.core.instance/gen/main/swift/com/sandpolis/core/instance;
+			name = org.s7s.core.instance;
+			path = ../../module/org.s7s.core.instance/gen/main/swift/com/sandpolis/core/instance;
 			sourceTree = "<group>";
 		};
 		AA0BA55A2554E04A0042A3A3 /* msg */ = {
@@ -325,15 +325,15 @@
 			path = msg;
 			sourceTree = "<group>";
 		};
-		AA0BA5702554E0AF0042A3A3 /* com.sandpolis.core.net */ = {
+		AA0BA5702554E0AF0042A3A3 /* org.s7s.core.net */ = {
 			isa = PBXGroup;
 			children = (
 				AA0BA5712554E0AF0042A3A3 /* msg */,
 				AA0BA5762554E0AF0042A3A3 /* channel.pb.swift */,
 				AA0BA5772554E0AF0042A3A3 /* message.pb.swift */,
 			);
-			name = com.sandpolis.core.net;
-			path = ../../module/com.sandpolis.core.net/gen/main/swift/com/sandpolis/core/net;
+			name = org.s7s.core.net;
+			path = ../../module/org.s7s.core.net/gen/main/swift/com/sandpolis/core/net;
 			sourceTree = "<group>";
 		};
 		AA0BA5712554E0AF0042A3A3 /* msg */ = {
@@ -347,13 +347,13 @@
 			path = msg;
 			sourceTree = "<group>";
 		};
-		AA0BA5842554E1300042A3A3 /* com.sandpolis.plugin.desktop */ = {
+		AA0BA5842554E1300042A3A3 /* org.s7s.plugin.desktop */ = {
 			isa = PBXGroup;
 			children = (
 				AA0BA5852554E1300042A3A3 /* msg */,
 			);
-			name = com.sandpolis.plugin.desktop;
-			path = ../../plugin/com.sandpolis.plugin.desktop/gen/main/swift/com/sandpolis/plugin/desktop;
+			name = org.s7s.plugin.desktop;
+			path = ../../plugin/org.s7s.plugin.desktop/gen/main/swift/com/sandpolis/plugin/desktop;
 			sourceTree = "<group>";
 		};
 		AA0BA5852554E1300042A3A3 /* msg */ = {
@@ -366,13 +366,13 @@
 			path = msg;
 			sourceTree = "<group>";
 		};
-		AA79B3A72554E68C007E8A6B /* com.sandpolis.core.clientserver */ = {
+		AA79B3A72554E68C007E8A6B /* org.s7s.core.clientserver */ = {
 			isa = PBXGroup;
 			children = (
 				AA79B3A82554E68C007E8A6B /* msg */,
 			);
-			name = com.sandpolis.core.clientserver;
-			path = ../../module/com.sandpolis.core.clientserver/gen/main/swift/com/sandpolis/core/clientserver;
+			name = org.s7s.core.clientserver;
+			path = ../../module/org.s7s.core.clientserver/gen/main/swift/com/sandpolis/core/clientserver;
 			sourceTree = "<group>";
 		};
 		AA79B3A82554E68C007E8A6B /* msg */ = {
@@ -387,13 +387,13 @@
 			path = msg;
 			sourceTree = "<group>";
 		};
-		AA79B3B82554E6AA007E8A6B /* com.sandpolis.plugin.filesystem */ = {
+		AA79B3B82554E6AA007E8A6B /* org.s7s.plugin.filesystem */ = {
 			isa = PBXGroup;
 			children = (
 				AA79B3B92554E6AA007E8A6B /* msg */,
 			);
-			name = com.sandpolis.plugin.filesystem;
-			path = ../../plugin/com.sandpolis.plugin.filesystem/gen/main/swift/com/sandpolis/plugin/filesystem;
+			name = org.s7s.plugin.filesystem;
+			path = ../../plugin/org.s7s.plugin.filesystem/gen/main/swift/com/sandpolis/plugin/filesystem;
 			sourceTree = "<group>";
 		};
 		AA79B3B92554E6AA007E8A6B /* msg */ = {
@@ -404,13 +404,13 @@
 			path = msg;
 			sourceTree = "<group>";
 		};
-		AA79B3BF2554E6C3007E8A6B /* com.sandpolis.plugin.shell */ = {
+		AA79B3BF2554E6C3007E8A6B /* org.s7s.plugin.shell */ = {
 			isa = PBXGroup;
 			children = (
 				AA79B3C02554E6C3007E8A6B /* msg */,
 			);
-			name = com.sandpolis.plugin.shell;
-			path = ../../plugin/com.sandpolis.plugin.shell/gen/main/swift/com/sandpolis/plugin/shell;
+			name = org.s7s.plugin.shell;
+			path = ../../plugin/org.s7s.plugin.shell/gen/main/swift/com/sandpolis/plugin/shell;
 			sourceTree = "<group>";
 		};
 		AA79B3C02554E6C3007E8A6B /* msg */ = {
@@ -422,13 +422,13 @@
 			path = msg;
 			sourceTree = "<group>";
 		};
-		AA79B3C82554E6EC007E8A6B /* com.sandpolis.plugin.device */ = {
+		AA79B3C82554E6EC007E8A6B /* org.s7s.plugin.device */ = {
 			isa = PBXGroup;
 			children = (
 				AA79B3C92554E6EC007E8A6B /* msg */,
 			);
-			name = com.sandpolis.plugin.device;
-			path = ../../plugin/com.sandpolis.plugin.device/gen/main/swift/com/sandpolis/plugin/device;
+			name = org.s7s.plugin.device;
+			path = ../../plugin/org.s7s.plugin.device/gen/main/swift/com/sandpolis/plugin/device;
 			sourceTree = "<group>";
 		};
 		AA79B3C92554E6EC007E8A6B /* msg */ = {
@@ -733,14 +733,14 @@
 		AAD2B7902554D4350071D814 /* Proto */ = {
 			isa = PBXGroup;
 			children = (
-				AA79B3C82554E6EC007E8A6B /* com.sandpolis.plugin.device */,
-				AA79B3BF2554E6C3007E8A6B /* com.sandpolis.plugin.shell */,
-				AA79B3B82554E6AA007E8A6B /* com.sandpolis.plugin.filesystem */,
-				AA79B3A72554E68C007E8A6B /* com.sandpolis.core.clientserver */,
-				AA0BA5842554E1300042A3A3 /* com.sandpolis.plugin.desktop */,
-				AA0BA5702554E0AF0042A3A3 /* com.sandpolis.core.net */,
-				AA0BA5572554E04A0042A3A3 /* com.sandpolis.core.instance */,
-				AA0BA5472554DFDA0042A3A3 /* com.sandpolis.core.foundation */,
+				AA79B3C82554E6EC007E8A6B /* org.s7s.plugin.device */,
+				AA79B3BF2554E6C3007E8A6B /* org.s7s.plugin.shell */,
+				AA79B3B82554E6AA007E8A6B /* org.s7s.plugin.filesystem */,
+				AA79B3A72554E68C007E8A6B /* org.s7s.core.clientserver */,
+				AA0BA5842554E1300042A3A3 /* org.s7s.plugin.desktop */,
+				AA0BA5702554E0AF0042A3A3 /* org.s7s.core.net */,
+				AA0BA5572554E04A0042A3A3 /* org.s7s.core.instance */,
+				AA0BA5472554DFDA0042A3A3 /* org.s7s.core.foundation */,
 			);
 			name = Proto;
 			sourceTree = "<group>";
@@ -1188,7 +1188,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sandpolis.client.lockstone;
+				PRODUCT_BUNDLE_IDENTIFIER = org.s7s.instance.client.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1208,7 +1208,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sandpolis.client.lockstone;
+				PRODUCT_BUNDLE_IDENTIFIER = org.s7s.instance.client.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1229,7 +1229,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sandpolis.SandpolisClientTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.s7s.SandpolisClientTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1251,7 +1251,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sandpolis.SandpolisClientTests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.s7s.SandpolisClientTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1271,7 +1271,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sandpolis.SandpolisClientUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.s7s.SandpolisClientUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1291,7 +1291,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sandpolis.SandpolisClientUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = org.s7s.SandpolisClientUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

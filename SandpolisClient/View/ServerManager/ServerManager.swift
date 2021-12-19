@@ -1,10 +1,9 @@
 //============================================================================//
 //                                                                            //
-//                         Copyright © 2015 Sandpolis                         //
+//            Copyright © 2015 - 2022 Sandpolis Software Foundation           //
 //                                                                            //
 //  This source file is subject to the terms of the Mozilla Public License    //
-//  version 2. You may not use this file except in compliance with the MPL    //
-//  as published by the Mozilla Foundation.                                   //
+//  version 2. You may not use this file except in compliance with the MPLv2. //
 //                                                                            //
 //============================================================================//
 import UIKit
@@ -18,10 +17,10 @@ class ServerManager: UITableViewController {
 		super.viewDidLoad()
 
 		// Load table data from user defaults
-        servers = (UserDefaults.standard.stringArray(forKey: "servers") ?? []).map(SandpolisServer.init).filter { $0 != nil }.map { $0! }
+		servers = (UserDefaults.standard.stringArray(forKey: "servers") ?? []).map(SandpolisServer.init).filter { $0 != nil }.map { $0! }
 
-        self.tableView.reloadData()
-        self.refreshServerStates()
+		self.tableView.reloadData()
+		self.refreshServerStates()
 
 		// Setup refresh control
 		refreshControl = UIRefreshControl()
@@ -115,9 +114,9 @@ class ServerManager: UITableViewController {
 	}
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddServerSegue",
-            let _ = segue.destination as? AddServer {
-        }else if segue.identifier == "EditServerSegue",
+		if segue.identifier == "AddServerSegue",
+			let _ = segue.destination as? AddServer {
+		}else if segue.identifier == "EditServerSegue",
 			let dest = segue.destination as? AddServer {
 			if let index = sender as? IndexPath {
 				dest.server = servers[index.row]

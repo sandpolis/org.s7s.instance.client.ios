@@ -1,10 +1,9 @@
 //============================================================================//
 //                                                                            //
-//                         Copyright © 2015 Sandpolis                         //
+//            Copyright © 2015 - 2022 Sandpolis Software Foundation           //
 //                                                                            //
 //  This source file is subject to the terms of the Mozilla Public License    //
-//  version 2. You may not use this file except in compliance with the MPL    //
-//  as published by the Mozilla Foundation.                                   //
+//  version 2. You may not use this file except in compliance with the MPLv2. //
 //                                                                            //
 //============================================================================//
 import Foundation
@@ -30,7 +29,7 @@ class SandpolisProfile {
 	lazy var ipLocationRegion = STAttribute("/profile/\(uuid)/agent/ip_location/region")
 	lazy var instanceType = STAttribute("/profile/\(uuid)/instance_type")
 	lazy var instanceFlavor = STAttribute("/profile/\(uuid)/instance_flavor")
-	lazy var screenshot = STAttribute(Oid("com.sandpolis.plugin.desktop", "/profile/\(uuid)/screenshot"))
+	lazy var screenshot = STAttribute(Oid("org.s7s.plugin.desktop", "/profile/\(uuid)/screenshot"))
 
 	/// The client's UUID
 	let uuid: String
